@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Car Rental System</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+
 </head>
 <body>
   <header>
@@ -17,8 +19,112 @@
     </nav>
   </header>
 
+  <section id="home" class="home">
+    <h2>Welcome to Car Rental System</h2>
+    <p>
+      Welcome to our car rental system. We offer a wide range of vehicles to suit your needs. 
+      Whether you need a small car for a quick trip or a spacious SUV for a family vacation, 
+      we've got you covered.
+    </p>
+    <p>
+      Our system allows you to register new cars, make reservations, and generate reports 
+      for better management. Feel free to explore and use the navigation above to access 
+      specific functionalities.
+    </p>
+    <p>
+      Please note that the information displayed here is just a placeholder. 
+      Actual data and functionalities will be implemented in the final system.
+    </p>
+  </section>
+
+  <section id="register" class="register">
     <h2>Register a New Car</h2>
+    <table>
+      <!-- Table for registering a new car -->
+      <thead>
+        <tr>
+          <th>Car Model</th>
+          <th>Year</th>
+          <th>Plate ID</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sample data for registration -->
+        <tr>
+          <td>Toyota Camry</td>
+          <td>2022</td>
+          <td>ABC 123</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Honda Civic</td>
+          <td>2021</td>
+          <td>XYZ 456</td>
+          <td>Out of Service</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </section>
+
+  <section id="reservation" class="reservation">
     <h2>Car Reservation</h2>
+    <table>
+      <!-- Table for car reservation and customer information -->
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Car Model</th>
+          <th>Plate ID</th>
+          <th>Reservation Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sample data for reservations -->
+        <tr>
+          <td>John Doe</td>
+          <td>Toyota Camry</td>
+          <td>ABC 123</td>
+          <td>Pending</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>Honda Civic</td>
+          <td>XYZ 456</td>
+          <td>Confirmed</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </section>
+
+  <section id="reports" class="reports">
     <h2>Reports</h2>
+    <table>
+      <!-- Table for reports -->
+      <thead>
+        <tr>
+          <th>Report Name</th>
+          <th>Date</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sample data for reports -->
+        <tr>
+          <td>Reservations Report</td>
+          <td>2023-01-15</td>
+          <td>Details all reservations made</td>
+        </tr>
+        <tr>
+          <td>Car Status Report</td>
+          <td>2023-01-20</td>
+          <td>Displays status of all cars</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </section>
 </body>
 </html>
