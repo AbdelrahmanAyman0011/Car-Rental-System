@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Rental System</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+
+</head>
+<body>
+  <header>
+    <nav class = "navigation">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class = "sign_background">
+
+  <div class="sign">
+    <h1>Register</h1>      
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter name" name="name" id="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+    <label for="passwordRepeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="passwordRepeat" id="passwordRepeat" required>
+
+    <button type="submit" class="registerbtn">Register</button>
+</div>
+
+
+  </section>
+
+<script>
+    function validateForm() {
+        var password = document.getElementById("password").value;
+        var passwordRepeat = document.getElementById("passwordRepeat").value;
+        var email = document.getElementById("email").value;
+
+        if (password !== passwordRepeat) {
+            alert("Passwords do not match. Please try again.");
+            return false;
+        }
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!email.match(emailPattern)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</body>
+</html>
