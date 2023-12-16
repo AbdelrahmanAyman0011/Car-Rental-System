@@ -1,24 +1,32 @@
-/* Reset default margin and padding */
-body,
-ul {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-
-/* Basic styling */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333333;
-}
-
 header {
-  background-color: #3f0351bb;
-  color: white;
-  padding: 10px;
+  background-color: #070f48;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px; /* Adjust the padding to your desired fixed size */
 }
 
+.navigation a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding-left: 20px; /* Adjust the padding to your desired fixed size */
+}
+.navigation a:hover {
+  color: rgb(80, 80, 167);
+}
 nav ul {
   list-style: none;
   margin: 0;
@@ -35,6 +43,82 @@ nav ul li a {
   text-decoration: none;
 }
 
+section {
+  padding: 50px 50px; /* Adjust the padding to your desired fixed size */
+  margin: 0 auto; /* Center the section */
+  max-width: 800px; /* Set a maximum width for the section */
+}
+
+.main {
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px; /* Adjust padding as needed */
+  box-sizing: border-box;
+  text-align: center; /* Center-align text */
+  color: #fff; /* Set text color */
+}
+
+
+.main h2 {
+  color: rgb(241, 241, 241);
+  font-size: 1.4em;
+  font-weight: 500;
+}
+.main h2 span {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgb(55, 0, 255);
+  font-size: 3em;
+  font-weight: 600;
+}
+.main h3 {
+  color: #5005c9;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+/* Reset default margin and padding */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+/* Styles for h1 */
+.main h1 {
+  font-size: 2.5em; /* Adjust font size */
+  margin-bottom: 20px; /* Add spacing */
+}
+
+/* Styles for paragraphs */
+.main p {
+  font-size: 1.2em; /* Adjust font size */
+  line-height: 1.6; /* Set line height */
+  margin-bottom: 15px; /* Add spacing */
+}
+
+
+
+
+
+/* Style for the header */
+header {
+  color: white;
+  padding: 10px;
+}
+
 /* Styling for sections */
 section {
   margin: 20px;
@@ -43,18 +127,6 @@ section {
   border-radius: 5px;
 }
 
-/* Styling for tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-}
 
 /* Style for the headings */
 h2 {
