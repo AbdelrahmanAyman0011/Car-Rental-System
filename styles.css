@@ -9,7 +9,6 @@
 header {
   background-color: #070f48;
   width: 100%;
-  position: fixed;
   z-index: 999;
   display: flex;
   justify-content: space-between;
@@ -50,6 +49,9 @@ section {
 }
 
 .main {
+  width:90%; /*Takes 90% width from WebContainer*/
+  height: auto;
+  margin: auto;
   max-width: 100%;
   width: 100%;
   min-height: 100vh;
