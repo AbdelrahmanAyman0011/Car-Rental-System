@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Car Rental System</title>
+  <title>Signup</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 
 </head>
 <body>
   <header>
+    <a href="index.html" class="logo">Car Rental</a>
+
     <nav class = "navigation">
       <ul>
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -33,6 +35,16 @@
         <label for="passwordRepeat"><b>Repeat Password</b></label>
         <input type="password" placeholder="Repeat Password" name="passwordRepeat" id="passwordRepeat" required>
 
+        <label for="cardnum"><b>Card number</b></label>
+        <input type="text" placeholder="Enter 14 number" name="cardnum" id="cardnum" required>
+
+        <div class="form-group">
+          <label for="cvv"><b>CVV</b></label>
+          <input type="pay" placeholder="CVV" name="cvv" id="cvv" required>
+          <label for="date"><b>Date</b></label>
+          <input type="pay" placeholder="day/mon" name="date" id="date" required>
+      </div>
+      
         <button type="submit" class="registerbtn">Register</button>
     </form>
 </div>

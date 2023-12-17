@@ -1,48 +1,42 @@
-// Function to create buttons
-function createButton(text, id) {
-    const button = document.createElement('button');
-    button.textContent = text;
-    button.id = id;
-    return button;
+// Function to simulate typewriter effect
+function typeWriter(text, element, delay) {
+    let index = 0;
+    const interval = setInterval(() => {
+        element.textContent += text[index];
+        index++;
+        if (index === text.length) {
+            clearInterval(interval);
+        }
+    }, delay);
 }
-                        //Function to check if there any empty values before submitting the form
-function SubmitForm() {
-                var password = document.getElementById("pass").value;
-                var mail = document.getElementById("mail").value;
-                var name = document.getElementById("name").value;
 
-                if (name == "") {
-                    alert("Name can't be empty");
-                    return false;
-                }
+// Start the typewriter effect for the admin headings
+window.onload = function () {
+    const adminHeading = "Welcome admin";
+    const adminSubHeading = "Now you can control  .... ";
+    const carRentalHeading = "Welcome to Car Rental System";
 
-                if (mail == "") {
-                    alert("Email can't be empty");
-                    return false;
-                }
+    const adminHeadingElement = document.getElementById("adminHeading");
+    const adminSubHeadingElement = document.getElementById("adminSubHeading");
+    const carRentalHeadingElement = document.getElementById("carRentalHeading");
 
-                if (password == "") {
-                    alert("Password can't be empty");
-                    return false;
-                }
+    // Delay in milliseconds between each character
+    const delay = 100;
 
-                if (!validatePassword()) {
-                    return false;
-                }
+    // Start typing the admin headings
+    setTimeout(() => {
+        typeWriter(adminHeading, adminHeadingElement, delay);
+        adminHeadingElement.style.opacity = 1; // Make the text visible after typing
+    }, 500);
 
-                return true;
-            }
+    setTimeout(() => {
+        typeWriter(adminSubHeading, adminSubHeadingElement, delay);
+        adminSubHeadingElement.style.opacity = 1; // Make the text visible after typing
+    }, 2000);
 
-
-// Create buttons
-const homeButton = createButton('Home', 'homeBtn');
-const registerButton = createButton('Register Car', 'registerBtn');
-const reservationButton = createButton('Reservation', 'reservationBtn');
-const reportsButton = createButton('Reports', 'reportsBtn');
-
-// Append buttons to the navigation
-const nav = document.querySelector('nav ul');
-nav.appendChild(homeButton);
-nav.appendChild(registerButton);
-nav.appendChild(reservationButton);
-nav.appendChild(reportsButton);
+    // Start typing the Car Rental System heading after a delay
+    setTimeout(() => {
+        typeWriter(carRentalHeading, carRentalHeadingElement, delay);
+        carRentalHeadingElement.style.opacity = 1; // Make the text visible after typing
+    }, 4000);
+};
