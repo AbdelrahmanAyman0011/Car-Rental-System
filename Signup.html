@@ -19,20 +19,22 @@
   <section class = "sign_background">
 
   <div class="sign">
-    <h1>Register</h1>      
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter name" name="name" id="name" required>
+    <form action="signup.php" method="POST" onsubmit="return validateForm()">
+        <h1>Register</h1>      
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter name" name="name" id="name" required>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-    <label for="passwordRepeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="passwordRepeat" id="passwordRepeat" required>
+        <label for="passwordRepeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="passwordRepeat" id="passwordRepeat" required>
 
-    <button type="submit" class="registerbtn">Register</button>
+        <button type="submit" class="registerbtn">Register</button>
+    </form>
 </div>
 
 
