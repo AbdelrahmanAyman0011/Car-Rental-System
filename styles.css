@@ -207,6 +207,49 @@ section {
   font-size: 3em;
 }
 
+
+.report {
+  max-width: 900px;
+  max-height: 900px; /* Adjust maximum width of the registration form */
+  width: 100%; /* Adjust width of the form container */
+  margin: 10 auto; /* Center the form horizontally */
+  padding: 24px; /* Add padding around the form */
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.8); /* Background color for the form */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(183, 73, 73, 0.1);
+  color: #333;
+
+}
+
+.report form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.report h1{
+  
+  margin-bottom: 40px;
+  font-size: 3em;
+}
+/* Other existing styles */
+
+.text-report {
+  display: flex;
+  flex-direction: column;
+  page-break-inside: avoid;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.text-report h2 {
+  font-size: 30px;
+  margin: 5px 0;
+  color: #333;
+  font-weight: normal;
+}
+
+
 .registbtn {
   background-color: #000276;
   color: white;
