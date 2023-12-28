@@ -261,7 +261,7 @@ section {
   flex: 1;
   padding: 8px;
   margin-bottom: 6px;
-  margin-right: 14px; /* Adjust this value to move it left */
+  margin-right: 8px; /* Adjust this value to move it left */
   border: none;
   border-radius: 30px;
   background-color: #f8f8f8;
