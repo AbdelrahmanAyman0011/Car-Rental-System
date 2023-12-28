@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -6,6 +7,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 header {
   background-color: #070f48;
   width: 100%;
@@ -13,7 +15,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px; /* Adjust the padding to your desired fixed size */
+  padding: 10px 50px;
+  /* Adjust the padding to your desired fixed size */
 }
 
 .navigation a {
@@ -21,11 +24,14 @@ header {
   text-decoration: none;
   font-size: 1.1em;
   font-weight: 500;
-  padding-left: 20px; /* Adjust the padding to your desired fixed size */
+  padding-left: 20px;
+  /* Adjust the padding to your desired fixed size */
 }
+
 .navigation a:hover {
   color: rgb(80, 80, 167);
 }
+
 nav ul {
   list-style: none;
   margin: 0;
@@ -41,13 +47,16 @@ nav ul li a {
   color: white;
   text-decoration: none;
 }
+
 .logo {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  
+
   font-weight: 700;
   font-size: 1.8em;
-}.admin {
+}
+
+.admin {
   position: relative;
   width: 90%;
   height: auto;
@@ -65,9 +74,28 @@ nav ul li a {
   text-align: center;
   color: #fff;
   display: flex;
-  align-items: flex-start; /* Align items to the start (top) */
-  justify-content: flex-start; /* Justify content to the start (left) */
-  height: 100vh; 
+  align-items: flex-start;
+  /* Align items to the start (top) */
+  justify-content: flex-start;
+  /* Justify content to the start (left) */
+  height: 100vh;
+}
+
+.adminNav {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* Change the font if needed */
+  background: url(imgs/admin.jpg) no-repeat;
+  /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .admin .sign_background {
@@ -87,7 +115,7 @@ nav ul li a {
 }
 
 .admin h3 {
-  position:static;
+  position: static;
   color: #b88ad9;
   font-size: 3em;
   font-weight: 700;
@@ -98,16 +126,20 @@ nav ul li a {
 }
 
 .admin h1 {
-  top: 20px; /* Adjust top position as needed */
-  left: 20px; /* Adjust left position as needed */
+  top: 20px;
+  /* Adjust top position as needed */
+  left: 20px;
+  /* Adjust left position as needed */
 }
 
 @keyframes moveText {
   0% {
     transform: translatex(0);
   }
+
   100% {
-    transform: translatex(10px); /* Adjust the distance or direction of motion */
+    transform: translatex(10px);
+    /* Adjust the distance or direction of motion */
   }
 }
 
@@ -116,13 +148,17 @@ section {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f0f0; /* Background color for the entire page */
+  background-color: #f0f0f0;
+  /* Background color for the entire page */
 }
-.sign_background{
+
+.sign_background {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif; /* Change the font if needed */
-  background-image: url('imgs/background.jpg'); /* Replace with your image path */
+  font-family: Arial, sans-serif;
+  /* Change the font if needed */
+  background-image: url('imgs/background.jpg');
+  /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -132,15 +168,18 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 .sign {
-  background-color: rgba(255, 255, 255, 0.8); /* Background color for the login form */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Background color for the login form */
   padding: 20px;
   max-width: 400px;
   width: 100%;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #333; /* Text color */
+  color: #333;
+  /* Text color */
 }
 
 .sign h1 {
@@ -150,7 +189,8 @@ section {
 .sign label {
   display: block;
   margin-bottom: 8px;
-  color: #333; /* Label text color */
+  color: #333;
+  /* Label text color */
 }
 
 .sign input[type="text"],
@@ -160,9 +200,11 @@ section {
   margin-bottom: 15px;
   border: none;
   border-radius: 3px;
-  
-  background-color: #f8f8f8; /* Input background color */
+
+  background-color: #f8f8f8;
+  /* Input background color */
 }
+
 .form-group {
   display: flex;
   align-items: center;
@@ -170,11 +212,13 @@ section {
 
 .form-group label,
 .form-group input[type="pay"] {
-  margin-right: 20px; /* Adjust as needed for spacing */
+  margin-right: 20px;
+  /* Adjust as needed for spacing */
 }
 
 .form-group input[type="pay"] {
-  width: 100px; /* Adjust width as needed */
+  width: 100px;
+  /* Adjust width as needed */
   padding: 10px;
   margin-bottom: 15px;
   border: none;
@@ -184,11 +228,13 @@ section {
 
 /* Adjust label width or other properties if needed */
 .form-group label {
-  width: 40px; /* Adjust label width as needed */
+  width: 40px;
+  /* Adjust label width as needed */
 }
 
 .sign button.Loginbtn {
-  background-color: #007bff; /* Button background color */
+  background-color: #007bff;
+  /* Button background color */
   color: white;
   padding: 12px 16px;
   margin-top: 10px;
@@ -197,10 +243,12 @@ section {
   width: 100%;
   opacity: 0.9;
   border-radius: 3px;
-  
+
 }
+
 .sign button.registerbtn {
-  background-color: #007bff; /* Button background color */
+  background-color: #007bff;
+  /* Button background color */
   color: white;
   padding: 12px 16px;
   margin-top: 10px;
@@ -208,9 +256,10 @@ section {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
-  
+
   border-radius: 3px;
 }
+
 .sign button.registerbtn:hover {
   opacity: 1;
 }
@@ -221,11 +270,13 @@ section {
   background-color: #e0e0e0;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Center text within the container */
+  text-align: center;
+  /* Center text within the container */
 }
 
 .main {
-  width:90%; /*Takes 90% width from WebContainer*/
+  width: 90%;
+  /*Takes 90% width from WebContainer*/
   height: auto;
   margin: auto;
   max-width: 100%;
@@ -236,24 +287,36 @@ section {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 50px; /* Adjust padding as needed */
+  padding: 50px;
+  /* Adjust padding as needed */
   box-sizing: border-box;
-  text-align: center; /* Center-align text */
-  color: #fff; /* Set text color */
-  position: relative; /* Add relative positioning */
+  text-align: center;
+  /* Center-align text */
+  color: #fff;
+  /* Set text color */
+  position: relative;
+  /* Add relative positioning */
 
 }
 
 
 .main h1 {
-  position: absolute; /* Set to absolute positioning */
-  top: 70px; /* Adjust top position as needed */
-  left: 20px; /* Adjust left position as needed */
-  color: #fff; /* Set text color */
-  font-size: 3em; /* Set font size */
-  font-weight: 700; /* Set font weight */
-  margin: 0; /* Remove default margin */
-  animation: zoomInOut 4s infinite alternate; /* Adding animation */
+  position: absolute;
+  /* Set to absolute positioning */
+  top: 70px;
+  /* Adjust top position as needed */
+  left: 20px;
+  /* Adjust left position as needed */
+  color: #fff;
+  /* Set text color */
+  font-size: 3em;
+  /* Set font size */
+  font-weight: 700;
+  /* Set font weight */
+  margin: 0;
+  /* Remove default margin */
+  animation: zoomInOut 4s infinite alternate;
+  /* Adding animation */
 
 }
 
@@ -265,11 +328,13 @@ section {
 .admin div {
   position: relative;
 }
+
 .main h2 {
   color: rgb(241, 241, 241);
   font-size: 1.4em;
   font-weight: 500;
 }
+
 .main h2 span {
   display: inline-block;
   margin-top: 10px;
@@ -277,6 +342,7 @@ section {
   font-size: 3em;
   font-weight: 600;
 }
+
 .main h3 {
   color: #5005c9;
   font-size: 2em;
@@ -295,17 +361,23 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* Styles for h1 */
 .main h1 {
-  font-size: 2.5em; /* Adjust font size */
-  margin-bottom: 20px; /* Add spacing */
+  font-size: 2.5em;
+  /* Adjust font size */
+  margin-bottom: 20px;
+  /* Add spacing */
 }
 
 /* Styles for paragraphs */
 .main p {
-  font-size: 1.2em; /* Adjust font size */
-  line-height: 1.6; /* Set line height */
-  margin-bottom: 15px; /* Add spacing */
+  font-size: 1.2em;
+  /* Adjust font size */
+  line-height: 1.6;
+  /* Set line height */
+  margin-bottom: 15px;
+  /* Add spacing */
 }
 
 
@@ -337,10 +409,13 @@ h2 {
 p {
   margin-bottom: 10px;
 }
+
 /* Styles for the buttons */
 nav ul button {
-  padding: 10px 15px; /* Add padding to the buttons */
-  margin: 0 5px; /* Add margin between buttons */
+  padding: 10px 15px;
+  /* Add padding to the buttons */
+  margin: 0 5px;
+  /* Add margin between buttons */
   background-color: #6fadff;
   border: none;
   color: white;
