@@ -21,52 +21,71 @@
     </nav>
   </header>
   <section class="sign_background">
-
     <div class="sign">
-      <form action="signup.php" method="POST" onsubmit="return validateForm()">
-        <h1><span class="register-heading">Register</span></h1>
-        <div class="inline-labels ">
-          <input type="text" placeholder="Enter first name" name="fname" id="fname" required>
 
-          <input type="text" placeholder="Enter last name" name="lname" id="lname" required>
-        </div>
-
-        <input type="text" placeholder="Enter email" name="email" id="email" required>
-
-        <div class="">
-          <div class="inline-labels">
-            <select name="gender" id="gender">
-              <option value="select">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-            <input type="text" placeholder="Enter phone" name="pnum" id="pnum" required>
+    <div class="title"><h1>Registration</h1></div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" placeholder="Enter your First Name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" placeholder="Enter your Last Name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
           </div>
         </div>
+       <div class = "inline-labels">
+        <div class="input-box">
+          <span class="details">Country</span>
+          <input type="text" placeholder="Enter your country" required>
+        
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          
+          <span class="gender-title">Gender</span>
+          
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+        </div>
+         </div>
 
-        <div class="">
-          <div class="inline-labels">
-
-            <select name="country" id="country">
-              <option value="select">Select</option>
-              <option value="egypt">Egypt</option>
-              <option value="america">America</option>
-              <option value="marroco">Marroco</option>
-              <option value="saudi Arabia">Saudi Arabia</option>
-              <option value="china">China</option>
-            </select>
-
-            <input type="text" placeholder="Enter city" name="city" id="city" required>
           </div>
         </div>
-        <input type="text" placeholder="Enter your street" name="street" id="street" required>
-        <div class="inline-labels ">
-          <input type="password" placeholder="Enter Password" name="password" id="password" required>
-
-          <input type="password" placeholder="Repeat Password" name="passwordRepeat" id="passwordRepeat" required>
+      </div>
+        <div class="button">
+          <button type="submit" name="submit" class="Loginbtn">Register</button>
         </div>
-        <button type="submit" class="registerbtn">Register</button>
+        
       </form>
+    </div>
+  </div>
     </div>
 
 
