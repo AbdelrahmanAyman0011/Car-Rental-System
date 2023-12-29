@@ -258,12 +258,27 @@ section {
 
 .inline-labels {
   display: flex;
+  
   align-items: center;
 }
-
+.inline-labels input[type="text"] {
+  width: 5px; /* Set the width for the text input fields */
+}
 .inline-labels label {
   margin-right: 10px;
 }
+
+.inline-labels input[type="text"],
+.inline-labels select {
+  width: 200px; /* Set the width for the text input and select fields */
+}
+
+/* Define a class for the Gender label */
+.gender-label {
+  border-radius: 30px; /* Applying border-radius to the Gender label */
+  display: inline-block; /* Ensure the label stays inline with other elements */
+}
+
 
 .inline-labels:last-child {
   margin-bottom: 10px;
@@ -359,7 +374,7 @@ section {
 
 .sign label {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 2px;
   color: #333;
   /* Label text color */
 }

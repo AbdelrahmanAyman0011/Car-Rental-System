@@ -28,32 +28,39 @@
         <h1>Register a car</h1>
 
         <div class="form-group">
-          <input type="text" placeholder="Name" name="name" id="name" class="cname" required>
+          <label for="ID"><b>ID</b></label>
+          <input type="text" placeholder="ID" name="ID" id="ID" required>
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Name" name="name" id="name" required>
         </div>
 
         <div class="form-group">
+          <label for="CPrice"><b>Price</b></label>
           <input type="text" placeholder="Price" name="CPrice" id="CPrice" required>
 
+          <label for="CModel"><b>Model</b></label>
           <input type="text" placeholder="Model" name="CModel" id="CModel" required>
 
         </div>
 
         <div class="form-group">
+          <label for="CColor"><b>Color</b></label>
           <input type="text" placeholder="Color" name="CColor" id="CColor" required>
+
+          <label for="PID"><b>Plate ID</b></label>
           <input type="text" placeholder="Plate ID" name="PID" id="PID" required>
 
         </div>
 
         <div class="form-group">
+          <label for="state"><b>State</b></label>
+          <input type="text" placeholder="State" name="state" id="state" required>
+
+          <label for="OID"><b>Office ID</b></label>
           <input type="text" placeholder="Office ID" name="OID" id="OID" required>
+
         </div>
 
-        <div>
-          <select>
-            <option selected="selected" value="True">Available</option>
-            <option selected="selected" value="False">Not Available</option>
-          </select>
-        </div>
         <div class="signRegist">
           <button type="submit" name="submit" class="registbtn">Register</button>
 
