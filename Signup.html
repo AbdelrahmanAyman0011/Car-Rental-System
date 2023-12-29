@@ -25,12 +25,13 @@
     <div class="sign">
       <form action="signup.php" method="POST" onsubmit="return validateForm()">
         <h1>Register</h1>
-        <label for="fname"><b>First Name</b></label>
-        <input type="text" placeholder="Enter first name" name="fname" id="fname" required>
+        <div class="inline-labels ">
+          <label for="fname"><b>First Name</b></label>
+          <input type="text" placeholder="Enter first name" name="fname" id="fname" required>
 
-        <label for="lname"><b>Last Name</b></label>
-        <input type="text" placeholder="Enter last name" name="lname" id="lname" required>
-
+          <label for="lname"><b>Last Name</b></label>
+          <input type="text" placeholder="Enter last name" name="lname" id="lname" required>
+        </div>
 
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter email" name="email" id="email" required>
@@ -65,13 +66,13 @@
         </div>
         <label for="street"><b>Street</b></label>
         <input type="text" placeholder="Enter your street" name="street" id="street" required>
+        <div class="inline-labels ">
+          <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" id="password" required>
-
-        <label for="passwordRepeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="passwordRepeat" id="passwordRepeat" required>
-
+          <label for="passwordRepeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="passwordRepeat" id="passwordRepeat" required>
+        </div>
         <button type="submit" class="registerbtn">Register</button>
       </form>
     </div>
