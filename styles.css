@@ -173,7 +173,7 @@ section {
   background-color: rgba(255, 255, 255, 0.8);
   /* Background color for the login form */
   padding: 20px;
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   text-align: center;
   border-radius: 5px;
@@ -184,12 +184,17 @@ section {
 
 
 .signRegist {
-  max-width: 600px; /* Adjust maximum width of the registration form */
-  width: 100%; /* Adjust width of the form container */
-  margin: 10 auto; /* Center the form horizontally */
-  padding: 24px; /* Add padding around the form */
+  max-width: 600px;
+  /* Adjust maximum width of the registration form */
+  width: 100%;
+  /* Adjust width of the form container */
+  margin: 10 auto;
+  /* Center the form horizontally */
+  padding: 24px;
+  /* Add padding around the form */
   margin-top: 30px;
-  background-color: rgba(255, 255, 255, 0.8); /* Background color for the form */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Background color for the form */
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(183, 73, 73, 0.1);
   color: #333;
@@ -201,8 +206,9 @@ section {
   flex-direction: column;
   align-items: center;
 }
-.signRegist h1{
-  
+
+.signRegist h1 {
+
   margin-bottom: 40px;
   font-size: 3em;
 }
@@ -210,12 +216,17 @@ section {
 
 .report {
   max-width: 900px;
-  max-height: 900px; /* Adjust maximum width of the registration form */
-  width: 100%; /* Adjust width of the form container */
-  margin: 10 auto; /* Center the form horizontally */
-  padding: 24px; /* Add padding around the form */
+  max-height: 900px;
+  /* Adjust maximum width of the registration form */
+  width: 100%;
+  /* Adjust width of the form container */
+  margin: 10 auto;
+  /* Center the form horizontally */
+  padding: 24px;
+  /* Add padding around the form */
   margin-top: 30px;
-  background-color: rgba(255, 255, 255, 0.8); /* Background color for the form */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Background color for the form */
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(183, 73, 73, 0.1);
   color: #333;
@@ -227,11 +238,13 @@ section {
   flex-direction: column;
   align-items: center;
 }
-.report h1{
-  
+
+.report h1 {
+
   margin-bottom: 40px;
   font-size: 3em;
 }
+
 /* Other existing styles */
 
 .text-report {
@@ -288,23 +301,28 @@ section {
   background-color: #f8f8f8;
   /* Input background color */
 }
+
 .form-group {
   display: flex;
   align-items: center;
-  margin-bottom: 15px; /* Add margin between form groups */
-  
-  }
+  margin: 15px;
+  /* Add margin between form groups */
+
+}
 
 .form-group label {
-  width: 100px; /* Adjust label width as needed */
-  margin-right: 8px; /* Adjust margin for spacing between label and input */
+  width: 100px;
+  /* Adjust label width as needed */
+  margin-right: 8px;
+  /* Adjust margin for spacing between label and input */
 }
 
 .form-group input[type="text"] {
   flex: 1;
   padding: 8px;
   margin-bottom: 6px;
-  margin-right: 8px; /* Adjust this value to move it left */
+  margin-right: 8px;
+  /* Adjust this value to move it left */
   border: none;
   border-radius: 30px;
   background-color: #f8f8f8;
@@ -314,14 +332,19 @@ section {
 }
 
 .form-group textarea {
-  flex: 1; /* Take remaining space */
-  padding: 8px; /* Adjust padding */
-  margin-bottom: 15px; /* Add margin for spacing */
+  flex: 1;
+  /* Take remaining space */
+  padding: 8px;
+  /* Adjust padding */
+  margin-bottom: 15px;
+  /* Add margin for spacing */
   border: none;
   border-radius: 3px;
   background-color: #f8f8f8;
-  resize: vertical; /* Allowing vertical resize */
-  min-height: 100px; /* Set minimum height */
+  resize: vertical;
+  /* Allowing vertical resize */
+  min-height: 100px;
+  /* Set minimum height */
 }
 
 .sign button.Loginbtn {

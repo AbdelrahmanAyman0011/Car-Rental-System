@@ -25,11 +25,46 @@
     <div class="sign">
       <form action="signup.php" method="POST" onsubmit="return validateForm()">
         <h1>Register</h1>
-        <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter name" name="name" id="name" required>
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" placeholder="Enter first name" name="fname" id="fname" required>
+
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter last name" name="lname" id="lname" required>
+
 
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <input type="text" placeholder="Enter email" name="email" id="email" required>
+
+        <div class="form-group">
+          <label for="gender"><b>Gender</b></label>
+          <select name="gender" id="gender">
+            <option value="select">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <label for="pnum"><b>Phone</b></label>
+          <input type="text" placeholder="Enter phone" name="pnum" id="pnum" required>
+        </div>
+
+        <div class="form-group">
+          <label for="country"><b>Country</b></label>
+          <select name="country" id="country">
+            <option value="select">Select</option>
+            <option value="egypt">Egypt</option>
+            <option value="america">America</option>
+            <option value="marroco">Marroco</option>
+            <option value="saudi Arabia">Saudi Arabia</option>
+            <option value="china">China</option>
+
+          </select>
+
+          <label for="city"><b>City</b></label>
+          <input type="text" placeholder="Enter city" name="city" id="city" required>
+
+        </div>
+        <label for="street"><b>Street</b></label>
+        <input type="text" placeholder="Enter your street" name="street" id="street" required>
 
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password" required>
