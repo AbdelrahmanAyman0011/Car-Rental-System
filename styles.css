@@ -523,7 +523,7 @@ form .user-details .input-box{
   /* Label text color */
 }
 
-.sign input[type="text"],
+.sign input[type="email"],
 .sign input[type="password"] {
   width: calc(100% - 20px);
   padding: 12px;
