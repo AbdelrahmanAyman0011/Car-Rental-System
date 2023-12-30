@@ -1,11 +1,31 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])) {
-        $name = $_POST["name"];
+echo "hi!!";
+if (isset($_POST["submit"])) {
+    
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
         $mail = $_POST["email"];
-        $pass = md5($_POST["password"]);
+        $phone = $_POST["phone"];
+        $gender = $_POST["gender"];
+        $country = $_POST["country"];
+        $city = $_POST["country"];
+        $street = $_POST["country"];
+        $pass = $_POST["password"];
 
-        try {
+        require_once 'connection.php';
+        require_once 'phpFunctions.php';
+
+        
+
+        if(emailUsed($con,$mail) !== false){
+            header("location:Signup.html?error=emailUsed");
+            exit();
+        }
+
+        createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, $city, $street, $pass);
+
+
+        /*try {
             // Connection to the database
             $dsn = "mysql:host=localhost;dbname=registration";
             $user = "root";
@@ -28,10 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $con = null;
         } catch (PDOException $e) {
             die("Connection failed: " . $e->getMessage());
-        }
-    } else {
-        echo "Incomplete form data.";
-    }
-} else {
-    header("Location: Login.html");
+        }*/
+
+
+}else{
+    header("location:Signup.html");
+    exit();
 }

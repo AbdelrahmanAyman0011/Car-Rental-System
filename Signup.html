@@ -27,34 +27,34 @@
         <h1>Registration</h1>
       </div>
       <div class="content">
-        <form action="#">
+        <form action="signup.php" method="POST" onsubmit="return validateForm();">
           <div class="user-details">
             <div class="input-box">
-              <input type="text" placeholder="First Name" required>
+              <input type="text" name="fname" id="fname" placeholder="First Name" required>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="Last Name" required>
+              <input type="text" name="lname" id="lname" placeholder="Last Name" required>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="Email" required>
+              <input type="text" name="email" id="email" placeholder="Email" required>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="Phone" required>
+              <input type="text" name="phone" id="phone" placeholder="Phone" required>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="Password" required>
+              <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="Repeat password" required>
+              <input type="password" name="rpassword" id="rpassword" placeholder="Repeat password" required>
             </div>
           </div>
           <div class="inline-labels">
             <div class="input-box">
-              <input type="text" placeholder="Country" required>
+              <input type="text" name="country" id="country" placeholder="Country" required>
 
               <div class="gender-details">
-                <input type="radio" name="gender" id="dot-1">
-                <input type="radio" name="gender" id="dot-2">
+                <input type="radio" name="gender" value="Male" id="dot-1">
+                <input type="radio" name="gender" value="Female" id="dot-2">
                 <input type="radio" name="gender" id="dot-3">
 
 
@@ -74,9 +74,8 @@
           </div>
       </div>
       <div class="button">
-        <button type="submit" name="submit" class="Loginbtn">Register</button>
+        <button type="submit" name="submit" id="submit" class="Loginbtn">Register</button>
       </div>
-
       </form>
     </div>
     </div>
@@ -87,8 +86,9 @@
 
   <script>
     function validateForm() {
+
       var password = document.getElementById("password").value;
-      var passwordRepeat = document.getElementById("passwordRepeat").value;
+      var passwordRepeat = document.getElementById("rpassword").value;
       var email = document.getElementById("email").value;
 
       if (password !== passwordRepeat) {

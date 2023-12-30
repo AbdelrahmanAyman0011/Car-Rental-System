@@ -7,7 +7,8 @@ CREATE TABLE Customer (
     City char(55) not null,
     Street char(55) not null,
     PhoneNum char(11) not null,
-    Email char(55) not null UNIQUE
+    Email char(55) not null UNIQUE,
+    `Password` varchar(70) not null
 );
 
 CREATE TABLE Office (
