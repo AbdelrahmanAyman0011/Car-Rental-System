@@ -23,9 +23,9 @@
 
   <section class="sign_background">
     <div class="sign">
-      <form method="POST" action="Login.php">
+      <form method="POST" action="Login.php" onsubmit="return validateForm();">
         <h1>Login</h1>
-        <input type="text" placeholder="Email" id="email" name="email" required>
+        <input type=" text" placeholder="Email" id="email" name="email" required>
 
         <input type="password" placeholder="Password" id="password" name="password" required>
         <label>
@@ -33,11 +33,25 @@
         </label>
         <button type="submit" name="submit" class="Loginbtn">Login</button>
 
-        <a href=adminLogin.html>Admin</a>
+
       </form>
+      <a href=adminLogin.html>Admin</a>
     </div>
   </section>
 
+  <script>
+    function validateForm() {
+
+      var email = document.getElementById("email").value;
+      var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
 </body>
 
 </html>

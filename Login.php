@@ -1,5 +1,51 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST["submit"])) {
+    
+  
+        $mail = $_POST["email"];
+        $pass = $_POST["password"];
+
+        require_once 'connection.php';
+        require_once 'phpFunctions.php';
+
+        
+
+        if(loginUser($con,$mail,$pass)!==false){
+            echo '<script>alert("Login error!, try again!");</script>';
+            }
+
+}else{
+    header("location:Login.html");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["email"]) && isset($_POST["password"])) {
         $email = $_POST["email"];
         $pass = $_POST["password"];
@@ -42,5 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Incomplete form data.";
     }
-}
-?>
+}*/
+
+
+
+

@@ -5,7 +5,8 @@ function emailUsed($con,$mail){
     $sql = "SELECT * FROM customer WHERE Email = ?;";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        header("Location:Signup.html?error=stmtfailed"); // if sql statement has any errors
+        header("location:Signup.html"); // if sql statement has any errors
+        exit();
     }
 
     mysqli_stmt_bind_param($stmt, "s", $mail);
@@ -17,7 +18,7 @@ function emailUsed($con,$mail){
         return $row; // what we want to login (the data)
     }
     else{ // what we want to register (not finding a used email)
-        $result =false;
+        $result = false;
         return $result;
     }
 
@@ -31,17 +32,41 @@ function createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, 
     VALUES (?,?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        header("Location:Signup.html?error=stmtfailed"); // if sql statement has any errors
+        echo "<p>Something went wrong, try again!</p>";
+        header("location:Signup.html"); // if sql statement has any errors
+        exit();
     }
 
 
     $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
-
-
     mysqli_stmt_bind_param($stmt, "sssssssss", $fname,$lname,$gender,$country,$city,$street,$phone,$mail,$hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+    header("location:Signup.html");
+    $result = true;
+    return $result;
+}
 
-    header("Location:index.html?error=none");
-    exit();
+function loginUser($con,$mail,$pass) {
+    $emailUsed = emailUsed($con,$mail);
+
+    if($emailUsed == false){
+        header("location:Login.html");
+        return false;
+    }
+ 
+    $pwdHashed = $emailUsed["Password"];
+    $checkPwd = password_verify($pass, $pwdHashed);
+    if($checkPwd == false){
+        header("location:Login.html");
+        return false;
+    }
+    else if ($checkPwd == true){
+    session_start();
+        $_SESSION["customerId"] = $emailUsed["Customer_ID"];
+        $_SESSION["customerName"] = $emailUsed["Fname"];
+        header("location:index.html");
+        exit();
+    }
+
 }
