@@ -524,6 +524,7 @@ form .user-details .input-box{
 }
 
 .sign input[type="email"],
+.sign input[type="text"],
 .sign input[type="password"] {
   width: calc(100% - 20px);
   padding: 12px;
