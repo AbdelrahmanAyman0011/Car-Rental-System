@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Reservation</title>
+    <title>Payment-Card</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
@@ -22,45 +22,28 @@
 
 <section class="CustomerNav">
     <div class="Ab-cust">
-        <h1>Reserve Car</h1>
-
-        <div class="reservation-form">
-            <h2>Make a Car Reservation</h2>
-            <label for="carType">Select Car Type:</label>
-            <select id="carType">
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="truck">Truck</option>
-                <!-- Add more options as needed -->
-            </select>
-
-            <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate">
-
-            <label for="endDate">End Date:</label>
-            <input type="date" id="endDate">
-
-            <div id="priceDisplay">Price: $0.00</div>
-
-            <button onclick="reserveCar()">Reserve Car</button>
-        </div>
+        <h1>Payment-Card</h1>
 
         <!-- Payment Form -->
         <div id="payment" class="payment-form">
-            <h2>Payment Information</h2>
-            <label for="cardNumber">Card Number:</label>
-            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" required>
+            <form id="paymentForm">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" required>
 
-            <label for="expirationDate">Expiration Date:</label>
-            <input type="text" id="expirationDate" placeholder="MM/YY" maxlength="5" required>
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="text" id="expirationDate" placeholder="MM/YY" maxlength="5" required>
 
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" placeholder="123" maxlength="3" required>
-
-            <button onclick="processPayment()">Submit Payment</button>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+            </form>
+            <div> <!-- Added missing div tag -->
+                <button id="submitPayment">Submit Payment</button>
+            </div>
         </div>
         <!-- End Payment Form -->
 
     </div>
 </section>
+</body>
+
 </html>

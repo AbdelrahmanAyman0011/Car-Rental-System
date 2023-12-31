@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reserve a car</title>
+  <title>Reserve a Car</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 </head>
@@ -15,7 +15,7 @@
   <nav class="navigation">
     <ul>
       <li><a href="CustomerHome.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="carRegistration.html"><i class="fas fa-car"></i> About</a></li>
+      <li><a href="AvailableCarsCust.html"><i class="fas fa-car"></i> Available Cars</a></li>
       <li><a href="#reservation"><i class="far fa-calendar-alt"></i> Log OUT</a></li>
     </ul>
   </nav>
@@ -23,21 +23,23 @@
 
 <section class="CustomerNav">
   <div class="Ab-cust">
-    <h1>Reserve Car</h1>
 
     <div class="customer-info">
-      <h2>Name: John Doe</h2>
-      <h2>ID: C123456</h2>
     </div>
 
     <div class="reservation-form">
       <h2>Make a Car Reservation</h2>
-      <label for="carType">Select Car Type:</label>
+      <label for="carType">Select Car (Available only Appears) :</label>
       <select id="carType">
         <option value="sedan">Sedan</option>
         <option value="suv">SUV</option>
         <option value="truck">Truck</option>
         <!-- Add more options as needed -->
+      </select>
+
+      <label for="carType">Select Payment-Card:</label>
+      <select id="carType">
+        <option value="sedan">00044-4412-14123-14124</option>
       </select>
 
       <label for="startDate">Start Date:</label>
