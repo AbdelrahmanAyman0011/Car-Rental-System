@@ -16,7 +16,7 @@
     <nav class="navigation">
       <ul>
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="Login.html">Login</a></li>
+        <li><a href="frontLogin.php">Login</a></li>
       </ul>
     </nav>
   </header>
@@ -27,7 +27,7 @@
         <h1>Registration</h1>
       </div>
       <div class="content">
-        <form action="signup.php" method="POST" onsubmit="return validateForm();">
+        <form action="backSignup.php" method="POST" onsubmit="return validateForm();">
           <div class="user-details">
             <div class="input-box">
               <input type="text" name="fname" id="fname" placeholder="First Name" required>

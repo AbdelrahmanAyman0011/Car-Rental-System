@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Signin</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 
@@ -16,16 +16,16 @@
     <nav class="navigation">
       <ul>
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="Signup.html">Sign Up</a></li>
+        <li><a href="frontSignup.php">Sign Up</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="sign_background">
     <div class="sign">
-      <form method="POST" action="Login.php" onsubmit="return validateForm();">
+      <form method="POST" action="backLogin.php" onsubmit="return validateForm();">
         <h1>Login</h1>
-        <input type="email" placeholder="Email" id="email" name="email" required>
+        <input type="text" placeholder="Email" id="email" name="email" required>
 
         <input type="password" placeholder="Password" id="password" name="password" required>
         <label>

@@ -33,7 +33,7 @@ function createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, 
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
         echo "<p>Something went wrong, try again!</p>";
-        header("location:Signup.html"); // if sql statement has any errors
+        header("location:frontSignup.php"); // if sql statement has any errors
         exit();
     }
 
@@ -42,23 +42,24 @@ function createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, 
     mysqli_stmt_bind_param($stmt, "sssssssss", $fname,$lname,$gender,$country,$city,$street,$phone,$mail,$hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location:Signup.html");
+    header("location:frontSignup.php");
     $result = true;
     return $result;
 }
 
 function loginUser($con,$mail,$pass) {
+
     $emailUsed = emailUsed($con,$mail);
 
     if($emailUsed == false){
-        header("location:Login.html");
+        header("location:frontLogin.php?emailNotFound");
         return false;
     }
  
     $pwdHashed = $emailUsed["Password"];
     $checkPwd = password_verify($pass, $pwdHashed);
     if($checkPwd == false){
-        header("location:Login.html");
+        header("location:frontLogin.php?error=invalidPassword");
         return false;
     }
     else if ($checkPwd == true){

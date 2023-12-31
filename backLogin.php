@@ -10,10 +10,10 @@ if (isset($_POST["submit"])) {
 
         
 
-        if(loginUser($con,$mail,$pass)!==false){
-            echo '<script>alert("Login error!, try again!");</script>';
-            }
+        loginUser($con,$mail,$pass);
+
+
 
 }else{
-    header("location:Login.html");
+    header("location:frontLogin.php");
 }
