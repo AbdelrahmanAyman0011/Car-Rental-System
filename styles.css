@@ -548,7 +548,6 @@ select {
   margin-right: 2;
   margin-bottom: 53px;
 }
-}
 
 @media (max-width: 459px) {
   .container .content .category {
@@ -572,7 +571,6 @@ select {
 .inline-labels label {
   margin-right: 2;
   margin-bottom: 53px;
-}
 }
 
 .reservation-form label {
@@ -707,10 +705,10 @@ form .input-box span.details {
   border-color: #9b59b6;
 }
 
-form .gender-details .gender-title {
+form .gender-details .gender-title{
   font-size: 20px;
   font-weight: 500;
-}
+ }
 
 form .category {
   display: flex;
