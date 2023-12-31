@@ -131,6 +131,82 @@ nav ul li a {
   left: 20px;
   /* Adjust left position as needed */
 }
+.Customer {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: url(imgs/Customer.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  /* Align items to the start (top) */
+  justify-content: flex-start;
+  /* Justify content to the start (left) */
+  height: 100vh;
+}
+
+.CustomerNav {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* Change the font if needed */
+  background: url(imgs/Customer.jpg) no-repeat;
+  /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Customer.sign_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(20px);
+}
+
+.Customer h1 {
+  font-size: 4em;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+}
+
+.Customer h3 {
+  position: static;
+  color: #b88ad9;
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(9%);
+
+}
+
+.Customer h1 {
+  top: 20px;
+  /* Adjust top position as needed */
+  left: 20px;
+  /* Adjust left position as needed */
+}
+
 
 @keyframes moveText {
   0% {
@@ -186,23 +262,121 @@ section {
   color: #f4f4f4;
 }
 
+.payment-section {
+  background-color: #f0f0f0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.payment-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.payment-section p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.payment-button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+  background-color: #0056b3;
+}
+
+.Ab-cust {
+  max-width: 900px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.8); /* Background color for the section */
+  border-radius: 20px; /* Border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(183, 73, 73, 0.1); /* Box shadow for a subtle lift */
+  color: #333; /* Text color */
+}
+
+.Ab-cust h1 {
+  margin-bottom: 40px;
+  font-size: 3em;
+  /* Additional styles for the heading within Ab-cust */
+}
+
+.signRegist {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.signRegist form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-group {
+  width: calc(48% - 10px);
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+  display: block;
+}
+
+.form-group input,
+.form-group select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #9b59b6;
+  background-color: #fff;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: url('path/to/arrow-icon.png') no-repeat right center;
+}
+
+/* Add these styles to your existing CSS for CarRegister */
 
 .signRegist {
   max-width: 600px;
-  /* Adjust maximum width of the registration form */
   width: 100%;
-  /* Adjust width of the form container */
-  margin: 10 auto;
-  /* Center the form horizontally */
+  margin: 20px auto;
   padding: 24px;
-  /* Add padding around the form */
-  margin-top: 30px;
-  background-color: rgba(255, 255, 255, 0.8);
-  /* Background color for the form */
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(183, 73, 73, 0.1);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   color: #333;
-
 }
 
 .signRegist form {
@@ -212,91 +386,67 @@ section {
 }
 
 .signRegist h1 {
-
-  margin-bottom: 40px;
-  font-size: 3em;
-}
-
-.sign form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
 }
 
 .form-group {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 10px;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-.form-group label,
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+}
+
 .form-group input,
 .form-group select {
-  margin-right: 10px;
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.sign h1 {
-  margin-bottom: 20px;
-  font-size: 18px;
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #9b59b6;
+  background-color: #fff;
 }
 
-/* Additional CSS to make the form responsive */
-@media (max-width: 600px) {
-  .form-group {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .form-group label,
-  .form-group input,
-  .form-group select {
-    margin-right: 0;
-    margin-bottom: 5px;
-    width: 100%;
-  }
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: url('path/to/arrow-icon.png') no-repeat right center;
 }
 
-/* Existing styles... */
-
-.inline-labels {
-  display: flex;
-
-  align-items: center;
+.signRegist button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 16px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.inline-labels input[type="text"] {
-  width: 5px;
-  /* Set the width for the text input fields */
-}
-
-.inline-labels label {
-  margin-right: 10px;
-}
-
-.inline-labels input[type="text"],
-.inline-labels select {
-  width: 200px;
-  /* Set the width for the text input and select fields */
-}
-
-/* Define a class for the Gender label */
-.gender-label {
-  border-radius: 30px;
-  /* Applying border-radius to the Gender label */
-  display: inline-block;
-  /* Ensure the label stays inline with other elements */
-}
-
-
-.inline-labels:last-child {
-  margin-bottom: 10px;
-}
-
-.sign h1 {
-  margin-bottom: 20px;
-  font-size: 38px;
+.signRegist button:hover {
+  background-color: #0056b3;
+  opacity: 1;
 }
 
 /* Additional CSS for responsiveness */
@@ -484,15 +634,30 @@ form .user-details .input-box{
   page-break-inside: avoid;
   text-align: left;
   margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.text-report:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .text-report h2 {
-  font-size: 30px;
+  font-size: 1.5em;
   margin: 5px 0;
   color: #333;
-  font-weight: normal;
+  font-weight: bold;
 }
 
+.text-report p {
+  font-size: 1.2em;
+  color: #555;
+  margin: 8px 0;
+}
 
 .registbtn {
   background-color: #000276;

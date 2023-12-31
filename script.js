@@ -39,4 +39,22 @@ window.onload = function () {
         typeWriter(carRentalHeading, carRentalHeadingElement, delay);
         carRentalHeadingElement.style.opacity = 1; // Make the text visible after typing
     }, 4000);
+
+    // Start typing the customer welcome message
+    const customerHeading = "Welcome, Customer!";
+    const customerSubHeading = "We're glad to have you with us.";
+
+    const customerHeadingElement = document.getElementById("customerHeading");
+    const customerSubHeadingElement = document.getElementById("customerSubHeading");
+
+    // Start typing the customer headings after a delay
+    setTimeout(() => {
+        typeWriter(customerHeading, customerHeadingElement, delay);
+        customerHeadingElement.style.opacity = 1; // Make the text visible after typing
+    }, 500);
+
+    setTimeout(() => {
+        typeWriter(customerSubHeading, customerSubHeadingElement, delay);
+        customerSubHeadingElement.style.opacity = 1; // Make the text visible after typing
+    }, 2000);
 };
