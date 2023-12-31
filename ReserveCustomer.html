@@ -26,13 +26,86 @@
 
       <div class="reservation-form">
         <h2>Make a Car Reservation</h2>
+
+
+        <label for="officeLoc">Office Location:</label>
+        <select name="officeLoc" id="officeLoc">
+        </select>
+        <button onclick="search()" class="Loginbtn">Search</button>
+
+
         <label for="carType">Select Car (Available only Appears) :</label>
         <select id="carType">
-          <option value="sedan">Sedan</option>
-          <option value="suv">SUV</option>
-          <option value="truck">Truck</option>
-          <!-- Add more options as needed -->
         </select>
+
+        <script>
+          // Fetch data from the PHP file
+          fetch('displayOffice.php')
+            .then(response => response.json())
+            .then(data => {
+              // Get the select element
+              const select = document.getElementById('officeLoc');
+
+              // Loop through the data and create options
+              data.forEach(option => {
+                const optionElement = document.createElement('option');
+                //optionElement.value = option;
+                optionElement.value = option.Office_ID;
+                optionElement.text = option.Office_ID;
+                select.add(optionElement);
+              });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+          function search() {
+            // Get the selected value
+            var selectedValue = document.getElementById('officeLoc').value;
+
+            // Send the selected value to the PHP file using Fetch API
+            fetch('displayCars.php', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: 'officeLoc=' + selectedValue, // Change to 'officeLoc' as it matches the PHP code
+            })
+              .then(response => response.json()) // Expecting JSON response
+              .then(data => {
+                const selectCarType = document.getElementById('carType');
+                selectCarType.innerHTML = ""; // Clear existing options
+                data.forEach(option => {
+                  const optionElement = document.createElement('option');
+                  optionElement.text = option;
+                  selectCarType.add(optionElement);
+                });
+              })
+              .catch(error => console.error('Error:', error));
+          }
+
+
+
+
+
+          fetch('displayCars.php')
+            .then(response => response.json())
+            .then(data => {
+              // Get the select element
+              const select = document.getElementById('carType');
+
+              // Loop through the data and create options
+              data.forEach(option => {
+                const optionElement = document.createElement('option');
+                //optionElement.value = option;
+                optionElement.text = option.Car_Name;
+                select.add(optionElement);
+              });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+
+        </script>
+
+
 
         <label for="carType">Select Payment-Card:</label>
         <select id="carType">

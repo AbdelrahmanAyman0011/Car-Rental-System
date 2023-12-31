@@ -118,7 +118,7 @@ function registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state){
     mysqli_stmt_bind_param($stmt, "sssssss",$plateID,$name,$model,$color,$price,$officeID,$state);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location:carRegistration.html.php");
+    header("location:carRegistration.html");
     $result = true;
     return $result;
 }
@@ -142,6 +142,79 @@ function registerOffice($con,$capacity,$location){
     return $result;
 }
 
+<<<<<<< HEAD
+function displayOffices($con) {
+    $sql = "SELECT Office_ID,`Location` FROM office;";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        header("location:Signup.html"); // if sql statement has any errors
+        exit();
+    }
+
+    mysqli_stmt_execute($stmt);
+
+
+    $resultData = mysqli_stmt_get_result($stmt);
+    $officeIds = [];
+
+    while ($row = mysqli_fetch_assoc($resultData)){
+        $officeIds[]=$row;
+    }
+    mysqli_stmt_close($stmt);
+
+
+    return $officeIds;
+
+
+}
+
+function displayCars1($con,$officeID) {
+    $sql = "SELECT Car_Name FROM car WHERE Office_ID =?;";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        header("location:Signup.html"); // if sql statement has any errors
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $officeID);
+    mysqli_stmt_execute($stmt);
+
+
+    $resultData = mysqli_stmt_get_result($stmt);
+    $carNames = [];
+
+    while ($row = mysqli_fetch_assoc($resultData)){
+        $carNames[]=$row['Car_Name'];
+    }
+    mysqli_stmt_close($stmt);
+
+
+    return $carNames;
+}
+
+function displayCars($con,$officeID) {
+$sql = "SELECT Car_Name FROM car WHERE Office_ID =? AND State = 1;";
+$stmt = mysqli_stmt_init($con);
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: Signup.html");
+    exit();
+}
+
+mysqli_stmt_bind_param($stmt, "s", $officeID);
+mysqli_stmt_execute($stmt);
+
+$resultData = mysqli_stmt_get_result($stmt);
+$carNames = [];
+
+    while ($row = mysqli_fetch_assoc($resultData)) {
+        $carNames[] = $row['Car_Name'];
+    }
+    mysqli_stmt_close($stmt);
+
+
+    return $carNames;
+}
+=======
 function paymentCard($con, $cardNumber, $expirationDate, $cvv, $password, $customer_ID) {
     $sql = "INSERT INTO payment_card (Card_ID, CVV, Ex_Date, `Password`, Customer_ID)
             VALUES (?, ?, ?, ?, ?);";
@@ -160,4 +233,9 @@ function paymentCard($con, $cardNumber, $expirationDate, $cvv, $password, $custo
     header("location:PaymentCard.html");
     $result = true;
     return $result;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8637a7b03d42a35e139f675db60269a1da5b99ea
+>>>>>>> fix
