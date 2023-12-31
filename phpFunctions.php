@@ -77,14 +77,33 @@ function registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state){
     VALUES (?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        header("location:carRegistration.html"); // if sql statement has any errors
+        header("location:carRegistration.html?error=somethingWrong"); // if sql statement has any errors
         exit();
     }
 
     mysqli_stmt_bind_param($stmt, "sssssss",$plateID,$name,$model,$color,$price,$officeID,$state);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location:frontSignup.php");
+    header("location:carRegistration.html.php");
+    $result = true;
+    return $result;
+}
+
+function registerOffice($con,$capacity,$location){
+    
+    $sql = "INSERT INTO office (Capacity,`Location`)
+    VALUES (?,?);";
+    $stmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        header("location:officeRegistration.php"); // if sql statement has any errors
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss",$capacity,$location);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location:officeRegistration.php");
     $result = true;
     return $result;
 }
