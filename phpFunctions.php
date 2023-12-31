@@ -26,6 +26,39 @@ function emailUsed($con,$mail){
     mysqli_stmt_close($stmt);
 }
 
+function get_cars($con, $customer_ID) {
+    $sql = "SELECT R.car_ID, car.Car_Name FROM Reserve R
+            JOIN car ON R.car_ID = car.car_ID
+            JOIN customer C ON R.customer_Id = C.customer_ID
+            WHERE R.customer_Id = ?
+            GROUP BY R.customer_Id, R.car_ID, R.S_Date;";
+
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        // Handle the error, for example, redirect to an error page
+        header("location: error.html");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $customer_ID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    $cars = array();
+    while ($row = mysqli_fetch_assoc($resultData)) {
+        $cars[] = array(
+            'car_ID' => $row['car_ID'],
+            'car_Name' => $row['Car_Name']
+        );
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $cars;
+}
+
+
+
 function createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, $city, $street, $pass){
     
     $sql = "INSERT INTO customer (Fname,Lname,Gender,Country,City,Street,PhoneNum,Email,`Password`)
@@ -65,6 +98,7 @@ function loginUser($con,$mail,$pass) {
     session_start();
         $_SESSION["customerId"] = $emailUsed["Customer_ID"];
         $_SESSION["customerName"] = $emailUsed["Fname"];
+        $_SESSION['cars'] = get_cars($con, $emailUsed["Customer_ID"]);
         header("location:CustomerHome.html");
         exit();
     }
@@ -108,6 +142,7 @@ function registerOffice($con,$capacity,$location){
     return $result;
 }
 
+<<<<<<< HEAD
 function displayOffices($con) {
     $sql = "SELECT Office_ID,`Location` FROM office;";
     $stmt = mysqli_stmt_init($con);
@@ -179,3 +214,24 @@ $carNames = [];
 
     return $carNames;
 }
+=======
+function paymentCard($con, $cardNumber, $expirationDate, $cvv, $password, $customer_ID) {
+    $sql = "INSERT INTO payment_card (Card_ID, CVV, Ex_Date, `Password`, Customer_ID)
+            VALUES (?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location:carRegistration.html?error=somethingWrong");
+        exit();
+    }
+
+    // Assuming expirationDate is in 'MM/YY' format, adjust the binding
+    $formattedExpirationDate = $expirationDate; // Update this line to format your date correctly if needed
+
+    mysqli_stmt_bind_param($stmt, "sssss", $cardNumber, $cvv, $formattedExpirationDate, $password, $customer_ID);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location:PaymentCard.html");
+    $result = true;
+    return $result;
+}
+>>>>>>> 8637a7b03d42a35e139f675db60269a1da5b99ea
