@@ -18,8 +18,9 @@ header {
   padding: 10px 50px;
   /* Adjust the padding to your desired fixed size */
 }
+
 :root {
-  --primary-color:#1C1C1C;
+  --primary-color: #1C1C1C;
   --secondary-color: #E40000;
   --background-color: #F2F2F2;
 }
@@ -136,6 +137,7 @@ nav ul li a {
   left: 20px;
   /* Adjust left position as needed */
 }
+
 .Customer {
   position: relative;
   width: 90%;
@@ -229,7 +231,8 @@ section {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f0f0; /* Background color for the entire page */
+  background-color: #f0f0f0;
+  /* Background color for the entire page */
   margin: 20px;
   padding: 20px;
   border-radius: 5px;
@@ -268,6 +271,7 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #f4f4f4;
 }
+
 .payment-form {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -332,7 +336,8 @@ button {
 }
 
 button:hover {
-  background-color: #27ae60; /* Darker shade for hover effect */
+  background-color: #27ae60;
+  /* Darker shade for hover effect */
 }
 
 /* Add transitions for smoother effects */
@@ -346,7 +351,8 @@ button:hover {
   width: 100%;
   margin: 10px auto;
   padding: 24px;
-  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent background */
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Slightly transparent background */
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -397,17 +403,20 @@ button:hover {
   border: 1px solid #ddd;
   background-color: #f9f9f9;
   transition: border-color 0.3s ease, background-color 0.3s ease;
-  box-sizing: border-box; /* Ensure padding and border are included in width */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in width */
 }
 
 .form-group select:focus {
   border-color: #9b59b6;
   background-color: #fff;
 }
+
 #priceDisplay {
   font-family: 'payment-card-font', sans-serif;
   /* Replace 'payment-card-font' with the actual font family used for payment cards */
-  font-size: 1.5em; /* Adjust the font size as needed */
+  font-size: 1.5em;
+  /* Adjust the font size as needed */
 }
 
 .reservation-form {
@@ -520,12 +529,15 @@ select {
   .signRegist {
     max-width: 100%;
   }
+
   .form-group input {
     width: 100%;
   }
+
   .form-group select {
     width: 100%;
   }
+
   .signRegist button {
     width: 100%;
   }
@@ -619,7 +631,8 @@ button {
 }
 
 button:hover {
-  background-color: #27ae60; /* Darker shade for hover effect */
+  background-color: #27ae60;
+  /* Darker shade for hover effect */
 }
 
 
@@ -705,10 +718,10 @@ form .input-box span.details {
   border-color: #9b59b6;
 }
 
-form .gender-details .gender-title{
+form .gender-details .gender-title {
   font-size: 20px;
   font-weight: 500;
- }
+}
 
 form .category {
   display: flex;
@@ -733,9 +746,9 @@ form .category label .dot {
   transition: all 0.3s ease;
 }
 
-#dot-1:checked ~ .category label .one,
-#dot-2:checked ~ .category label .two,
-#dot-3:checked ~ .category label .three {
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
   background: #9b59b6;
   border-color: #d9d9d9;
 }
@@ -766,27 +779,33 @@ form .button input {
 form .button input:hover {
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
-@media(max-width: 584px){
-  .container{
+
+@media(max-width: 584px) {
+  .container {
     max-width: 100%;
   }
-  form .user-details .input-box{
+
+  form .user-details .input-box {
     margin-bottom: 15px;
     width: 100%;
   }
-  form .category{
+
+  form .category {
     width: 100%;
   }
-  .content form .user-details{
+
+  .content form .user-details {
     max-height: 300px;
     overflow-y: scroll;
   }
-  .user-details::-webkit-scrollbar{
+
+  .user-details::-webkit-scrollbar {
     width: 5px;
   }
 }
-@media(max-width: 459px){
-  .container .content .category{
+
+@media(max-width: 459px) {
+  .container .content .category {
     flex-direction: column;
   }
 }
@@ -1087,7 +1106,8 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   background-color: var(--background-color);
-  color: #333; /* Default text color */
+  color: #333;
+  /* Default text color */
 }
 
 /* Styles for h1 */
@@ -1161,4 +1181,13 @@ nav ul button {
 
 nav ul button:hover {
   background-color: #4f8eeb;
+}
+
+.alertmsg {
+  color: red;
+}
+
+.registermsg {
+  color: green;
+
 }

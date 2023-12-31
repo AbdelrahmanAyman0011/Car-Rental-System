@@ -32,7 +32,7 @@ function createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, 
     VALUES (?,?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        header("location:frontSignup.php"); // if sql statement has any errors
+        header("location:frontSignup.php?error=somethingWrong"); // if sql statement has any errors
         exit();
     }
 
@@ -51,7 +51,7 @@ function loginUser($con,$mail,$pass) {
     $emailUsed = emailUsed($con,$mail);
 
     if($emailUsed == false){
-        header("location:frontLogin.php?emailNotFound");
+        header("location:frontLogin.php?error=emailNotFound");
         return false;
     }
  
@@ -72,16 +72,16 @@ function loginUser($con,$mail,$pass) {
 }
 
 
-function registerCar($con,$ID,$name,$price,$model,$color,$plateID,$officeID,$state){
-    $sql = "INSERT INTO car (Car_ID,Plate_ID,Car_Name,Model,Color,Price,Office_ID,`State`)
-    VALUES (?,?,?,?,?,?,?,?);";
+function registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state){
+    $sql = "INSERT INTO car (Plate_ID,Car_Name,Model,Color,Price,Office_ID,`State`)
+    VALUES (?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
         header("location:carRegistration.html"); // if sql statement has any errors
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ssssssss", $ID,$plateID,$name,$model,$color,$price,$officeID,$state);
+    mysqli_stmt_bind_param($stmt, "sssssss",$plateID,$name,$model,$color,$price,$officeID,$state);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location:frontSignup.php");

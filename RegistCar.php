@@ -1,7 +1,6 @@
 <?php
 if (isset($_POST["submit"])) {
     
-    $ID = $_POST["ID"];
     $name = $_POST["name"];
     $price = $_POST["CPrice"];
     $model = $_POST["CModel"];
@@ -15,7 +14,7 @@ if (isset($_POST["submit"])) {
 
         
 
-        registerCar($con,$ID,$name,$price,$model,$color,$plateID,$officeID,$state);
+        registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state);
 
 
 

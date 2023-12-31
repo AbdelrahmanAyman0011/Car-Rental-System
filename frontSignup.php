@@ -73,6 +73,14 @@
       </div>
       <div class="button">
         <button type="submit" name="submit" id="submit" class="Loginbtn">Register</button>
+  <?php if (isset($_GET["error"])) {
+    if ($_GET["error"] == "emailUsed") {
+        echo '<p class="alertmsg">This email is used before!</p>';
+    } elseif ($_GET["error"] == "somethingWrong") {
+        echo '<p class="alertmsg">Something wrong happened, try again.</p>';
+    }
+}
+?>
       </div>
       </form>
     </div>

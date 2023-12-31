@@ -32,11 +32,26 @@
         </label>
         <button type="submit" name="submit" class="Loginbtn">Login</button>
 
+  <?php
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "emailNotFound") {
+        echo '<p class="alertmsg">Email does not exist.</p>';
+    } elseif ($_GET["error"] == "invalidPassword") {
+        echo '<p class="alertmsg">Wrong password.</p>';
+    }
+}
+?>
+
 
       </form>
+
       <a href=adminLogin.php>Admin</a>
     </div>
+
   </section>
+
+
+
 
   <script>
     function validateForm() {
