@@ -26,6 +26,39 @@ function emailUsed($con,$mail){
     mysqli_stmt_close($stmt);
 }
 
+function get_cars($con, $customer_ID) {
+    $sql = "SELECT R.car_ID, car.Car_Name FROM Reserve R
+            JOIN car ON R.car_ID = car.car_ID
+            JOIN customer C ON R.customer_Id = C.customer_ID
+            WHERE R.customer_Id = ?
+            GROUP BY R.customer_Id, R.car_ID, R.S_Date;";
+
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        // Handle the error, for example, redirect to an error page
+        header("location: error.html");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $customer_ID);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    $cars = array();
+    while ($row = mysqli_fetch_assoc($resultData)) {
+        $cars[] = array(
+            'car_ID' => $row['car_ID'],
+            'car_Name' => $row['Car_Name']
+        );
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $cars;
+}
+
+
+
 function createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, $city, $street, $pass){
     
     $sql = "INSERT INTO customer (Fname,Lname,Gender,Country,City,Street,PhoneNum,Email,`Password`)
@@ -65,6 +98,7 @@ function loginUser($con,$mail,$pass) {
     session_start();
         $_SESSION["customerId"] = $emailUsed["Customer_ID"];
         $_SESSION["customerName"] = $emailUsed["Fname"];
+        $_SESSION['cars'] = get_cars($con, $emailUsed["Customer_ID"]);
         header("location:CustomerHome.html");
         exit();
     }
