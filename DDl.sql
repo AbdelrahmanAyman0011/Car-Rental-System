@@ -8,19 +8,11 @@ CREATE TABLE Customer (
     Street char(55) not null,
     PhoneNum char(11) not null,
     Email char(55) not null UNIQUE,
-    `Password` varchar(70) not null
+    Password varchar(70) not null
 );
 
 CREATE TABLE Office (
-<<<<<<< HEAD
-<<<<<<< HEAD
     Office_ID int PRIMARY KEY AUTO_INCREMENT,
-=======
-    Office_ID int PRIMARY KEY Auto increament,
->>>>>>> bcdb7a5e9c4db1b082aaeb0ee3d2f751f47d42c8
-=======
-    Office_ID int PRIMARY KEY AUTO_INCREMENT,
->>>>>>> f3526c29854ab4079de886e52765846b525c6315
     Capacity int not null,
     Location varchar(50) not null
 );
@@ -53,7 +45,7 @@ CREATE TABLE Admin (
     Lname varchar(55) not null,
     Gender char(1) not null,
     Email varchar(70) not null,
-    `Password` varchar(70) not null,
+    Password varchar(70) not null,
     Office_ID int not null,
     FOREIGN KEY (Office_ID) REFERENCES Office(Office_ID)
 );
@@ -62,7 +54,7 @@ CREATE TABLE Payment_Card (
     Card_ID varchar(20),
     CVV varchar(4),
     Ex_Date date not null,
-    `Password` varchar(20),
+    Password varchar(20),
     Customer_ID int not null,
     PRIMARY KEY (Card_ID, CVV),
     FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
@@ -70,11 +62,11 @@ CREATE TABLE Payment_Card (
 
 CREATE TABLE Payment_Operation (
     Operation_ID int,
-    `Date` date,
+    Date date,
     Card_ID varchar(25) not null,
     Customer_ID int not null,
     Price float not null,
-    PRIMARY KEY (Operation_ID, `Date`),
+    PRIMARY KEY (Operation_ID, Date),
     FOREIGN KEY (Card_ID) REFERENCES Payment_Card(Card_ID),
     FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
 );
