@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +29,22 @@
 
       <div class="Ab-cust">
         <h2>Name</h2>
+         <p><?php echo isset($_SESSION['customerName']) ? $_SESSION['customerName'] : 'Customer'; ?></p>
         <h2>ID</h2>
+         <p><?php echo isset($_SESSION['customerId']) ? $_SESSION['customerId'] : 'N/A'; ?></p>
       </div>
 
       <div class="Ab-cust">
-        <h2>Date</h2>
-        <h2>Reserved Car</h2>
+        <h2>Reserved Cars</h2>
+          <?php
+    if (isset($_SESSION['cars']) && !empty($_SESSION['cars'])) {
+        foreach ($_SESSION['cars'] as $car) {
+            echo "<p>{$car['car_Name']} (ID: {$car['car_ID']})</p>";
+        }
+    } else {
+        echo "<p>N/A</p>";
+    }
+    ?>
       </div>
 
     </div>

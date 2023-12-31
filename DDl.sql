@@ -12,7 +12,7 @@ CREATE TABLE Customer (
 );
 
 CREATE TABLE Office (
-    Office_ID int PRIMARY KEY,
+    Office_ID int PRIMARY KEY Auto increament,
     Capacity int not null,
     Location varchar(50) not null
 );
