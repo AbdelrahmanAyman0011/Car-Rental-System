@@ -23,7 +23,7 @@
 
   <section class="adminNav">
     <div class="sign">
-      <form method="POST" action="Login.php">
+      <form method="POST">
         <h1>Admin Login</h1>
         <input type="text" placeholder="Email" id="email" name="email" required>
 
@@ -37,6 +37,16 @@
       </form>
     </div>
   </section>
+
+  <?php
+if(isset($_POST["submit"])){
+    if($_POST["email"] == "admin" && $_POST["password"] == "admin"){
+      header("location:adminHome.html");
+    }else {
+      header("location:adminLogin.php?error=wrongAdminLogin");
+    }
+  }
+  ?>
 
 </body>
 

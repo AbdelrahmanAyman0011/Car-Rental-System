@@ -11,11 +11,10 @@
 
 <body>
   <header>
-    <a href="index.html" class="logo">Car Rental</a>
+    <a href="index.html" class="logo">CAR RENTAL SYSTEM</a>
 
     <nav class="navigation">
       <ul>
-        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="frontSignup.php">Sign Up</a></li>
       </ul>
     </nav>
@@ -35,7 +34,7 @@
 
 
       </form>
-      <a href=adminLogin.html>Admin</a>
+      <a href=adminLogin.php>Admin</a>
     </div>
   </section>
 

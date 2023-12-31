@@ -32,7 +32,6 @@ function createCustomer($con, $fname, $lname, $mail, $phone, $gender, $country, 
     VALUES (?,?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        echo "<p>Something went wrong, try again!</p>";
         header("location:frontSignup.php"); // if sql statement has any errors
         exit();
     }
@@ -66,8 +65,26 @@ function loginUser($con,$mail,$pass) {
     session_start();
         $_SESSION["customerId"] = $emailUsed["Customer_ID"];
         $_SESSION["customerName"] = $emailUsed["Fname"];
-        header("location:index.html");
+        header("location:CustomerHome.html");
         exit();
     }
 
+}
+
+
+function registerCar($con,$ID,$name,$price,$model,$color,$plateID,$officeID,$state){
+    $sql = "INSERT INTO car (Car_ID,Plate_ID,Car_Name,Model,Color,Price,Office_ID,`State`)
+    VALUES (?,?,?,?,?,?,?,?);";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        header("location:carRegistration.html"); // if sql statement has any errors
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ssssssss", $ID,$plateID,$name,$model,$color,$price,$officeID,$state);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location:frontSignup.php");
+    $result = true;
+    return $result;
 }
