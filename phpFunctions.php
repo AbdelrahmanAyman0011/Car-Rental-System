@@ -142,7 +142,6 @@ function registerOffice($con,$capacity,$location){
     return $result;
 }
 
-<<<<<<< HEAD
 function displayOffices($con) {
     $sql = "SELECT Office_ID,`Location` FROM office;";
     $stmt = mysqli_stmt_init($con);
@@ -214,7 +213,6 @@ $carNames = [];
 
     return $carNames;
 }
-=======
 function paymentCard($con, $cardNumber, $expirationDate, $cvv, $password, $customer_ID) {
     $sql = "INSERT INTO payment_card (Card_ID, CVV, Ex_Date, `Password`, Customer_ID)
             VALUES (?, ?, ?, ?, ?);";
@@ -233,9 +231,4 @@ function paymentCard($con, $cardNumber, $expirationDate, $cvv, $password, $custo
     header("location:PaymentCard.html");
     $result = true;
     return $result;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8637a7b03d42a35e139f675db60269a1da5b99ea
->>>>>>> fix
