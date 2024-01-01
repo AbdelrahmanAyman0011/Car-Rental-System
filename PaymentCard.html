@@ -22,7 +22,7 @@
 
     <section class="CustomerNav">
         <div class="Ab-cust">
-            <h1>Payment-Card</h1>
+            <h1>Add Payment-Card</h1>
 
             <form method="POST" action="backPaymentCard.php">
                 <div id="payment" class="payment-form">
@@ -32,17 +32,19 @@
                             maxlength="16" required>
 
                         <label for="expirationMonth">Expiration Month:</label>
-                        <input type="text" name="expirationMonth" id="expirationMonth" placeholder="e.g., 01" maxlength="2" required>
+                        <input type="text" name="expirationMonth" id="expirationMonth" placeholder="e.g., 01"
+                            maxlength="2" required>
 
                         <label for="expirationYear">Expiration Year:</label>
-                        <input type="text" name="expirationYear" id="expirationYear" placeholder="e.g., 24" maxlength="2" required>
+                        <input type="text" name="expirationYear" id="expirationYear" placeholder="e.g., 24"
+                            maxlength="2" required>
 
 
                         <label for="cvv">CVV:</label>
                         <input type="text" name="cvv" id="cvv" placeholder="123" maxlength="3" required>
                     </form>
                     <div> <!-- Added missing div tag -->
-                        <button type="submit" name="submit" id="submit">Add card</button>
+                        <button type="submit" name="submit" id="submit">Add</button>
                     </div>
                 </div>
             </form>

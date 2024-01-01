@@ -168,7 +168,7 @@ function displayOffices($con) {
 
 
 function displayCars($con,$officeID) {
-$sql = "SELECT Car_Name FROM car WHERE Office_ID =? AND State = 1;";
+$sql = "SELECT Car_ID, Car_Name FROM car WHERE Office_ID =? AND State = 1;";
 $stmt = mysqli_stmt_init($con);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
     exit();
@@ -181,12 +181,36 @@ $resultData = mysqli_stmt_get_result($stmt);
 $carNames = [];
 
     while ($row = mysqli_fetch_assoc($resultData)) {
-        $carNames[] = $row['Car_Name'];
+        $carNames[] = $row;
     }
     mysqli_stmt_close($stmt);
 
 
     return $carNames;
+}
+
+
+
+
+function displayPrice($con,$selectedValue) {
+    $sql = "SELECT Price FROM car WHERE Car_ID = ?;";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt, "s", $selectedValue);
+    mysqli_stmt_execute($stmt);
+    
+    $resultData = mysqli_stmt_get_result($stmt);
+    $carPrice = null;
+    
+        while ($row = mysqli_fetch_assoc($resultData)) {
+            $carPrice = $row['Price'];
+        }
+    
+    
+        return $carPrice;
 }
 
 
@@ -215,6 +239,8 @@ function displayCard($con, $customerId){
 }
 
 
+
+
 function paymentCard($con, $cardNumber, $expirationMonth, $expirationYear, $cvv, $customer_ID) {
     // Combine month and year into a date string
     $formattedExpirationDate = "20{$expirationYear}-{$expirationMonth}-01";
@@ -236,3 +262,42 @@ function paymentCard($con, $cardNumber, $expirationMonth, $expirationYear, $cvv,
 }
 
 
+function reserve($con,$customerId,$carId,$sDate,$eDate){
+    $sql = "INSERT INTO reserve (Customer_ID, Car_ID, S_Date, En_Date)
+            VALUES (?, ?, ?, ?);";
+
+$stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location:ReserveCustomer.php?error=somethingWrong");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ssss", $customerId, $carId, $sDate, $eDate);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location:ReserveCustomer.php");
+    $result = true;
+    return $result;
+
+}
+
+function changeState($con,$carId,$state){
+
+    $sql = "UPDATE car SET State = ? WHERE Car_ID = ?;";
+    $stmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location:ReserveCustomer.php?error=somethingWrong");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $state, $carId);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location:ReserveCustomer.php");
+    
+    $result = true;
+    return $result;
+
+
+}
