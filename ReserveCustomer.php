@@ -36,7 +36,7 @@
         <select name="carType" id="carType"></select>
 
         <label for="cardNum">Select Payment-Card:</label>
-        <select id="cardNum"></select>
+        <select name = "cardNum" id="cardNum"></select>
 
 
 
@@ -46,7 +46,11 @@
         <label for="endDate">End Date:</label>
         <input name="endDate" type="date" id="endDate">
 
-        <div id="priceDisplay">Price: $0.00</div>
+        <div id="priceDisplay">
+          Price: $0.00
+        </div>
+        <input type="hidden" name="price" id="hiddenPrice" value="">
+
         </div>
         <button type="submit" name="submit" id="submit">Reserve</button>
         </form>
@@ -57,12 +61,9 @@
   </section>
 
   <script>
-    function reserveCar() {
-      // Add logic here to handle car reservation, update price, and initiate payment process
-      alert("Car reserved! Payment process will start.");
-      // You can redirect to the payment page or perform further actions as needed
 
-    }
+
+
           // Fetch data from the PHP file
           fetch('displayOffice.php')
             .then(response => response.json())
@@ -92,7 +93,10 @@
             })
               .then(response => response.json()) // Expecting JSON response
               .then(data => {
+
+
                 const selectCarType = document.getElementById('carType');
+                
                 selectCarType.innerHTML = ""; // Clear existing options
                 data.forEach(option => {
                   const optionElement = document.createElement('option');
@@ -113,10 +117,14 @@
             .then(response => response.json()) // Expecting JSON response
         .then(data => {
             const priceDisplay = document.getElementById('priceDisplay');
+            const hiddenPrice = document.getElementById('hiddenPrice');
+
             if(data != null){
             priceDisplay.textContent = 'Price: $' + data; // Assuming 'data' is the price value
+            hiddenPrice.value = data;
         } else {
           priceDisplay.textContent = 'Price: not Available'; // Assuming 'data' is the price value
+          hiddenPrice.value = '';
 
         }
         })
@@ -136,10 +144,14 @@ function fetchPrice(selectedCar){
             .then(response => response.json()) // Expecting JSON response
         .then(data => {
             const priceDisplay = document.getElementById('priceDisplay');
+            const hiddenPrice = document.getElementById('hiddenPrice');
+
             if(data != null){
             priceDisplay.textContent = 'Price: $' + data; // Assuming 'data' is the price value
+            hiddenPrice.value = data;
         } else {
           priceDisplay.textContent = 'Price: not Available'; // Assuming 'data' is the price value
+          hiddenPrice.value = '';
 
         }
         })
@@ -183,11 +195,15 @@ function fetchCars(selectedValue){
             .then(response => response.json()) // Expecting JSON response
         .then(data => {
             const priceDisplay = document.getElementById('priceDisplay');
+            const hiddenPrice = document.getElementById('hiddenPrice');
+
             if(data != null){
             priceDisplay.textContent = 'Price: $' + data; // Assuming 'data' is the price value
+            hiddenPrice.value = data;
+            
         } else {
           priceDisplay.textContent = 'Price: not Available'; // Assuming 'data' is the price value
-
+          hiddenPrice.value = '';
         }
         })
         .catch(error => console.error('Error fetching price:', error));

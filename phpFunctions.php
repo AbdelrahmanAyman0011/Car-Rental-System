@@ -301,3 +301,60 @@ function changeState($con,$carId,$state){
 
 
 }
+
+
+function paymentOperation($con,$sDate,$cardNum,$customerId,$price){
+    $sql = "INSERT INTO payment_operation (`Date`, Card_ID, Customer_ID,Price)
+            VALUES (?, ?, ?, ?);";
+
+$stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "Statement preparation failed: " . mysqli_error($con);        
+        exit();
+    }
+    var_dump($stmt);
+    mysqli_stmt_bind_param($stmt, "sssf", $sDate, $cardNum, $customerId, $price);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    $result = true;
+    return $result;
+}
+
+function endDate($con,$carId){
+    $sql = "SELECT En_Date FROM reserve WHERE Car_ID = ?;";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $carId);
+    mysqli_stmt_execute($stmt);
+    
+    $resultData = mysqli_stmt_get_result($stmt);
+    $endDate = null;
+    
+        while ($row = mysqli_fetch_assoc($resultData)) {
+            $endDate = $row['En_Date'];
+        }
+    
+    
+        return $endDate;
+
+}
+
+
+    function ReturnCar($con,$carId) {
+
+    $sql = "DELETE FROM reserve WHERE Car_ID = ?;";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $carId);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    $result = true;
+    return $result;
+
+}

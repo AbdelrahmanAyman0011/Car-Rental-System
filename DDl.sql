@@ -61,7 +61,7 @@ CREATE TABLE Payment_Card (
 );
 
 CREATE TABLE Payment_Operation (
-    Operation_ID int,
+    Operation_ID int AUTO_INCREMENT,
     Date date,
     Card_ID varchar(25) not null,
     Customer_ID int not null,
