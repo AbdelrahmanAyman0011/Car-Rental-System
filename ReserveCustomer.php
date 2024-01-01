@@ -16,7 +16,7 @@
       <ul>
         <li><a href="CustomerHome.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="AvailableCarsCust.html"><i class="fas fa-car"></i> Available Cars</a></li>
-        <li><a href="#reservation"><i class="far fa-calendar-alt"></i> Log OUT</a></li>
+        <li><a href="index.html">Log OUT</a></li>
       </ul>
     </nav>
   </header>
