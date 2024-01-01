@@ -146,7 +146,6 @@ function displayOffices($con) {
     $sql = "SELECT Office_ID,`Location` FROM office;";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        header("location:Signup.html"); // if sql statement has any errors
         exit();
     }
 
@@ -167,35 +166,11 @@ function displayOffices($con) {
 
 }
 
-function displayCars1($con,$officeID) {
-    $sql = "SELECT Car_Name FROM car WHERE Office_ID =?;";
-    $stmt = mysqli_stmt_init($con);
-    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        header("location:Signup.html"); // if sql statement has any errors
-        exit();
-    }
-
-    mysqli_stmt_bind_param($stmt, "s", $officeID);
-    mysqli_stmt_execute($stmt);
-
-
-    $resultData = mysqli_stmt_get_result($stmt);
-    $carNames = [];
-
-    while ($row = mysqli_fetch_assoc($resultData)){
-        $carNames[]=$row['Car_Name'];
-    }
-    mysqli_stmt_close($stmt);
-
-
-    return $carNames;
-}
 
 function displayCars($con,$officeID) {
 $sql = "SELECT Car_Name FROM car WHERE Office_ID =? AND State = 1;";
 $stmt = mysqli_stmt_init($con);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("location: Signup.html");
     exit();
 }
 
@@ -213,12 +188,39 @@ $carNames = [];
 
     return $carNames;
 }
+
+
+
+
+function displayCard($con, $customerId){
+    $sql = "SELECT Card_ID FROM payment_card WHERE Customer_ID = ?;";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $customerId);
+    mysqli_stmt_execute($stmt);
+    
+    $resultData = mysqli_stmt_get_result($stmt);
+    $cardNums = [];
+    
+        while ($row = mysqli_fetch_assoc($resultData)) {
+            $cardNums[] = array('Card_ID' => $row['Card_ID']);
+        }
+        mysqli_stmt_close($stmt);
+    
+    
+        return $cardNums;
+}
+
+
 function paymentCard($con, $cardNumber, $expirationDate, $cvv, $password, $customer_ID) {
     $sql = "INSERT INTO payment_card (Card_ID, CVV, Ex_Date, `Password`, Customer_ID)
             VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location:carRegistration.html?error=somethingWrong");
+        header("location:PaymentCard.html?error=somethingWrong");
         exit();
     }
 

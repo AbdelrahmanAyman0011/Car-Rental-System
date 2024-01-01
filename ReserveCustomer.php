@@ -38,6 +38,9 @@
         <select id="carType">
         </select>
 
+        <label for="cardNum">Select Payment-Card:</label>
+        <select id="cardNum"></select>
+
         <script>
           // Fetch data from the PHP file
           fetch('displayOffice.php')
@@ -51,7 +54,7 @@
                 const optionElement = document.createElement('option');
                 //optionElement.value = option;
                 optionElement.value = option.Office_ID;
-                optionElement.text = option.Office_ID;
+                optionElement.text = option.Location;
                 select.add(optionElement);
               });
             })
@@ -83,20 +86,18 @@
           }
 
 
-
-
-
-          fetch('displayCars.php')
+          fetch('displayCard.php')
             .then(response => response.json())
             .then(data => {
               // Get the select element
-              const select = document.getElementById('carType');
+              const select = document.getElementById('cardNum');
 
               // Loop through the data and create options
               data.forEach(option => {
                 const optionElement = document.createElement('option');
                 //optionElement.value = option;
-                optionElement.text = option.Car_Name;
+                optionElement.value = option.Card_ID;
+                optionElement.text = option.Card_ID;
                 select.add(optionElement);
               });
             })
@@ -107,10 +108,7 @@
 
 
 
-        <label for="carType">Select Payment-Card:</label>
-        <select id="carType">
-          <option value="sedan">00044-4412-14123-14124</option>
-        </select>
+       
 
         <label for="startDate">Start Date:</label>
         <input type="date" id="startDate">

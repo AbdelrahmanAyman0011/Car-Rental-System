@@ -26,6 +26,7 @@ CREATE TABLE Car (
     Price float not null,
     Office_ID int not null,
     State boolean DEFAULT true,
+    Img_Path varchar(500),
     FOREIGN KEY (Office_ID) REFERENCES Office(Office_ID)
 );
 
