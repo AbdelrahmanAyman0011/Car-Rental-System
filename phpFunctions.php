@@ -273,8 +273,11 @@ $stmt = mysqli_stmt_init($con);
     }
     mysqli_stmt_bind_param($stmt, "ssss", $customerId, $carId, $sDate, $eDate);
     mysqli_stmt_execute($stmt);
+
+    if (mysqli_stmt_error($stmt)) {
+        echo "SQL Error: " . mysqli_stmt_error($stmt);
+    }
     mysqli_stmt_close($stmt);
-    header("location:ReserveCustomer.php");
     $result = true;
     return $result;
 
@@ -292,10 +295,7 @@ function changeState($con,$carId,$state){
 
     mysqli_stmt_bind_param($stmt, "ss", $state, $carId);
     mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-
-    header("location:ReserveCustomer.php");
-    
+    mysqli_stmt_close($stmt);    
     $result = true;
     return $result;
 
@@ -304,16 +304,15 @@ function changeState($con,$carId,$state){
 
 
 function paymentOperation($con,$sDate,$cardNum,$customerId,$price){
-    $sql = "INSERT INTO payment_operation (`Date`, Card_ID, Customer_ID,Price)
-            VALUES (?, ?, ?, ?);";
+    $sql = "INSERT INTO payment_operation (`Date`, Card_ID, Customer_ID, Price) VALUES (?, ?, ?, ?);";
 
 $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "Statement preparation failed: " . mysqli_error($con);        
+        header("location:ReserveCustomer.php?error=somethingWrong");
         exit();
     }
     var_dump($stmt);
-    mysqli_stmt_bind_param($stmt, "sssf", $sDate, $cardNum, $customerId, $price);
+    mysqli_stmt_bind_param($stmt, "ssss", $sDate, $cardNum, $customerId, $price);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     $result = true;
