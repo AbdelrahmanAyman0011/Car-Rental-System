@@ -31,15 +31,18 @@
                         <input type="text" name="cardNumber" id="cardNumber" placeholder="1234 5678 9012 3456"
                             maxlength="16" required>
 
-                        <label for="expirationDate">Expiration Date:</label>
-                        <input type="text" name="expirationDate" id="expirationDate" placeholder="MM/YY" maxlength="5"
-                            required>
+                        <label for="expirationMonth">Expiration Month:</label>
+                        <input type="text" name="expirationMonth" id="expirationMonth" placeholder="e.g., 01" maxlength="2" required>
+
+                        <label for="expirationYear">Expiration Year:</label>
+                        <input type="text" name="expirationYear" id="expirationYear" placeholder="e.g., 24" maxlength="2" required>
+
 
                         <label for="cvv">CVV:</label>
                         <input type="text" name="cvv" id="cvv" placeholder="123" maxlength="3" required>
                     </form>
                     <div> <!-- Added missing div tag -->
-                        <button type="submit" name="submit" id="submit">Submit Payment</button>
+                        <button type="submit" name="submit" id="submit">Add card</button>
                     </div>
                 </div>
             </form>

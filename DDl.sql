@@ -55,7 +55,6 @@ CREATE TABLE Payment_Card (
     Card_ID varchar(20),
     CVV varchar(4),
     Ex_Date date not null,
-    Password varchar(20),
     Customer_ID int not null,
     PRIMARY KEY (Card_ID, CVV),
     FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)

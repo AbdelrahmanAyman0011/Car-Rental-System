@@ -215,22 +215,24 @@ function displayCard($con, $customerId){
 }
 
 
-function paymentCard($con, $cardNumber, $expirationDate, $cvv, $password, $customer_ID) {
-    $sql = "INSERT INTO payment_card (Card_ID, CVV, Ex_Date, `Password`, Customer_ID)
-            VALUES (?, ?, ?, ?, ?);";
+function paymentCard($con, $cardNumber, $expirationMonth, $expirationYear, $cvv, $customer_ID) {
+    // Combine month and year into a date string
+    $formattedExpirationDate = "20{$expirationYear}-{$expirationMonth}-01";
+
+    $sql = "INSERT INTO payment_card (Card_ID, CVV, Ex_Date, Customer_ID)
+            VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location:PaymentCard.html?error=somethingWrong");
         exit();
     }
 
-    // Assuming expirationDate is in 'MM/YY' format, adjust the binding
-    $formattedExpirationDate = $expirationDate; // Update this line to format your date correctly if needed
-
-    mysqli_stmt_bind_param($stmt, "sssss", $cardNumber, $cvv, $formattedExpirationDate, $password, $customer_ID);
+    mysqli_stmt_bind_param($stmt, "ssss", $cardNumber, $cvv, $formattedExpirationDate, $customer_ID);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location:PaymentCard.html");
     $result = true;
     return $result;
 }
+
+
