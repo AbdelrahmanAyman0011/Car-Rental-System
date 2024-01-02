@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     $state = $_POST["state"];
 
 
-    $targetDir = "imgs/";
+    $targetDir = "imgs/Cars/";
     $targetFile = $targetDir . basename($_FILES["photo"]["name"]);
     move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile);
 

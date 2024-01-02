@@ -58,3 +58,11 @@ window.onload = function () {
         customerSubHeadingElement.style.opacity = 1; // Make the text visible after typing
     }, 2000);
 };
+function enlargeImage(image) {
+    if (image.classList.contains('enlarged')) {
+        image.classList.remove('enlarged');
+    } else {
+        // Add a class to the clicked image to apply styles for enlargement
+        image.classList.add('enlarged');
+    }
+}

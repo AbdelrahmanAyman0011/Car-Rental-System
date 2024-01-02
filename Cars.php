@@ -45,7 +45,7 @@
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>
-                  <td><img src="<?php echo $row['Img_Path']; ?>" alt="Car Photo"></td>
+                <td><img class="car-image" src="<?php echo $row['Img_Path']; ?>" alt="Car Photo" width="200" height="150" onclick="enlargeImage(this)"></td>
                   <td><?php echo $row['Car_ID']; ?></td>
                   <td><?php echo $row['Plate_ID']; ?></td>
                   <td><?php echo $row['Car_Name']; ?></td>

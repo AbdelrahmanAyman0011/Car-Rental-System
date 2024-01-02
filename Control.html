@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports Page</title>
+  <title>Control</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 </head>
@@ -20,31 +20,24 @@
       </ul>
     </nav>
   </header>
-
   <section class="adminNav">
     <div class="report">
-      <h1>About car</h1>
-
-      <div class="text-report">
-        <h2>ID</h2>
-        <h2>Price</h2>
-      </div>
-
-      <div class="text-report">
-        <h2>Model</h2>
-        <h2>Color</h2>
-      </div>
-
-      <div class="text-report">
-        <h2>Plate ID</h2>
-        <h2>State</h2>
-      </div>
-
-      <div class="text-report">
-        <h2>Office ID</h2>
-      </div>
+      <h1><span>Control</span></h1>
+      <button id="customersButton">Customers</button>
+      <button id="carsButton">Cars</button>
     </div>
   </section>
+
+  <script>
+    // JavaScript to navigate to links when buttons are clicked
+    document.getElementById("customersButton").addEventListener("click", function() {
+      window.location.href = "ControlCustomers.php"; // Replace with your destination link
+    });
+
+    document.getElementById("carsButton").addEventListener("click", function() {
+      window.location.href = "ControlCar.php"; // Replace with your destination link
+    });
+  </script>
 </body>
 
 </html>

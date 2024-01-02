@@ -1208,3 +1208,47 @@ nav ul button:hover {
 #carTable th {
   background-color: #f2f2f2;
 }
+
+
+.car-image {
+  transition: transform 0.3s ease-in-out;
+}
+.car-row:hover .car-image {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+/* styles.css */
+
+/* Style for the table */
+#carTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Style for table headers */
+#carTable th {
+  padding: 8px;
+  text-align: left;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for table cells */
+#carTable td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for buttons inside table cells */
+#carTable .changeStateBtn,
+#carTable .deleteBtn {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Additional styles or adjustments can be made here */
