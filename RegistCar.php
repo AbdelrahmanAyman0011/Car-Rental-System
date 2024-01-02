@@ -9,12 +9,16 @@ if (isset($_POST["submit"])) {
     $officeID = $_POST["OID"];
     $state = $_POST["state"];
 
+
+    $targetDir = "imgs/";
+    $targetFile = $targetDir . basename($_FILES["photo"]["name"]);
+    move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile);
+
         require_once 'connection.php';
         require_once 'phpFunctions.php';
-
         
 
-        registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state);
+        registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state,$targetFile);
 
 
 

@@ -106,16 +106,16 @@ function loginUser($con,$mail,$pass) {
 }
 
 
-function registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state){
-    $sql = "INSERT INTO car (Plate_ID,Car_Name,Model,Color,Price,Office_ID,`State`)
-    VALUES (?,?,?,?,?,?,?);";
+function registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state,$targetFile){
+    $sql = "INSERT INTO car (Plate_ID,Car_Name,Model,Color,Price,Office_ID,`State`,Img_Path)
+    VALUES (?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
         header("location:carRegistration.html?error=somethingWrong"); // if sql statement has any errors
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sssssss",$plateID,$name,$model,$color,$price,$officeID,$state);
+    mysqli_stmt_bind_param($stmt, "ssssssss",$plateID,$name,$model,$color,$price,$officeID,$state,$targetFile);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location:carRegistration.html");
@@ -278,6 +278,11 @@ $stmt = mysqli_stmt_init($con);
         echo "SQL Error: " . mysqli_stmt_error($stmt);
     }
     mysqli_stmt_close($stmt);
+
+    session_start();
+    $_SESSION['cars'] = get_cars($con, $_SESSION['customerId']);
+    session_write_close();
+
     $result = true;
     return $result;
 
@@ -353,6 +358,11 @@ function endDate($con,$carId){
     mysqli_stmt_bind_param($stmt, "s", $carId);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+
+    session_start();
+    $_SESSION['cars'] = get_cars($con, $_SESSION['customerId']);
+    session_write_close();
+
     $result = true;
     return $result;
 
