@@ -40,6 +40,7 @@
             $sql = "SELECT Car_ID, Plate_ID, Car_Name, Model, Color, Price, Office_ID, State, Img_Path FROM Car";
             $result = mysqli_query($con, $sql);
 
+            
             if ($result && mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
