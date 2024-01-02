@@ -4,8 +4,10 @@ if (isset($_POST["submit"])) {
     session_start();
     $customerId = $_SESSION["customerId"];
 
-    $carId = $_POST["cusCars"];
-
+    if (($carId=$_POST["cusCars"])==null){
+        header("location:ReturnCustomer.php?error=nullCar");
+        exit();
+    }
         require_once 'connection.php';
         require_once 'phpFunctions.php';
 

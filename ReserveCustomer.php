@@ -53,6 +53,21 @@
 
         </div>
         <button type="submit" name="submit" id="submit">Reserve</button>
+        <?php
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "nullCar") {
+        echo '<p class="alertmsg">No Car selected</p>';
+    } elseif ($_GET["error"] == "nullCard") {
+      echo '<p class="alertmsg">No Card selected</p>';
+    } elseif ($_GET["error"] == "nullSDate") {
+      echo '<p class="alertmsg">Start Date is not selected</p>';
+    }elseif ($_GET["error"] == "nullEDate") {
+      echo '<p class="alertmsg">End Date is not selected</p>';
+    }elseif ($_GET["error"] == "nullOffice") {
+      echo '<p class="alertmsg">Office is not selected</p>';
+    }
+}
+?>
         </form>
     </div>
     

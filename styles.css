@@ -1186,6 +1186,7 @@ nav ul button:hover {
 .alertmsg {
   color: red;
 }
+
 /* Your existing styles for the page */
 
 /* Style for the car table */
@@ -1251,4 +1252,78 @@ nav ul button:hover {
   border-radius: 4px;
 }
 
-/* Additional styles or adjustments can be made here */
+
+main {
+  max-width: 1500px;
+  width: 95%;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  align-items: stretch;
+
+}
+
+main .car {
+  max-width: 300px;
+  flex: 1 1 210px;
+  text-align: center;
+  height: 400px;
+  border: 1px solid lightgray;
+  margin: 20px;
+}
+
+
+main .car image {
+  height: 50%;
+  margin-bottom: 20px;
+
+
+}
+
+
+main .car .image {
+  height: 50%;
+  margin-bottom: 20px;
+}
+
+main .car .image img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+main .car .caption {
+  padding-left: 1em;
+  text-align: left;
+  line-height: 3em;
+  height: 25%;
+}
+
+main .car .caption p {
+  font-size: 1.5rem;
+}
+
+
+
+.car img {
+  width: 100%;
+  /* Make sure the image takes the full width of its container */
+  height: auto;
+  /* Maintain the aspect ratio */
+}
+
+.car button.add {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.car button.add:hover {
+  background-color: #45a049;
+}

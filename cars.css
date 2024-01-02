@@ -1,0 +1,1312 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: #222222e7;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  /* Adjust the padding to your desired fixed size */
+}
+
+:root {
+  --primary-color: #1C1C1C;
+  --secondary-color: #E40000;
+  --background-color: #F2F2F2;
+}
+
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navigation a:hover {
+  background-color: var(--secondary-color);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.logo {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+.admin {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: url(imgs/admin.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  /* Align items to the start (top) */
+  justify-content: flex-start;
+  /* Justify content to the start (left) */
+  height: 100vh;
+}
+
+.adminNav {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url(imgs/admin.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin .sign_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(20px);
+}
+
+.admin h1 {
+  font-size: 4em;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+}
+
+.admin h3 {
+  position: static;
+  color: #b88ad9;
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(9%);
+
+}
+
+.admin h1 {
+  top: 20px;
+  /* Adjust top position as needed */
+  left: 20px;
+  /* Adjust left position as needed */
+}
+
+.Customer {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: url(imgs/Customer.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  /* Align items to the start (top) */
+  justify-content: flex-start;
+  /* Justify content to the start (left) */
+  height: 100vh;
+}
+
+.CustomerNav {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* Change the font if needed */
+  background: url(imgs/Customer.jpg) no-repeat;
+  /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Customer.sign_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(20px);
+}
+
+.Customer h1 {
+  font-size: 4em;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+}
+
+.Customer h3 {
+  position: static;
+  color: #b88ad9;
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(9%);
+
+}
+
+.Customer h1 {
+  top: 20px;
+  /* Adjust top position as needed */
+  left: 20px;
+  /* Adjust left position as needed */
+}
+
+
+@keyframes moveText {
+  0% {
+    transform: translatex(0);
+  }
+
+  100% {
+    transform: translatex(10px);
+    /* Adjust the distance or direction of motion */
+  }
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  /* Background color for the entire page */
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sign_background {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* Change the font if needed */
+  background-image: url('imgs/background.png');
+  /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign {
+  background-color: #22222246;
+  padding: 30px;
+  max-width: 600px;
+  max-height: 1500px;
+  /* Increased height */
+  width: 100%;
+  margin: px;
+  /* Corrected typo in margin value */
+  /* padding: 34px; Remove this line to avoid overriding the previous padding */
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #f4f4f4;
+}
+
+.payment-form {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form h2 {
+  font-size: 2em;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.payment-form label {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+  display: block;
+}
+
+.payment-form input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.payment-form input:focus {
+  border-color: #9b59b6;
+  background-color: #fff;
+}
+
+.payment-form button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.payment-form button:hover {
+  background-color: #27ae60;
+}
+
+/* Button styles */
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #27ae60;
+  /* Darker shade for hover effect */
+}
+
+/* Add transitions for smoother effects */
+.transition {
+  transition: all 0.3s ease;
+}
+
+
+.Ab-cust {
+  max-width: 900px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Slightly transparent background */
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.Ab-cust h1 {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: var(--primary-color);
+}
+
+.signRegist {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.signRegist form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-group {
+  width: calc(48% - 10px);
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+  display: block;
+}
+
+.form-group select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+  /* Ensure padding and border are included in width */
+}
+
+.form-group select:focus {
+  border-color: #9b59b6;
+  background-color: #fff;
+}
+
+#priceDisplay {
+  font-family: 'payment-card-font', sans-serif;
+  /* Replace 'payment-card-font' with the actual font family used for payment cards */
+  font-size: 1.5em;
+  /* Adjust the font size as needed */
+}
+
+.reservation-form {
+  font-family: 'payment-card-font', sans-serif;
+  /* Replace 'payment-card-font' with the actual font family used for payment cards */
+}
+
+/* You can adjust the font-size property in the following rules as needed */
+.reservation-form h2 {
+  font-size: 2em;
+}
+
+.reservation-form label,
+.reservation-form select,
+.reservation-form input,
+.reservation-form button {
+  font-size: 1em;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: url('path/to/arrow-icon.png') no-repeat right center;
+}
+
+/* Add these styles to your existing CSS for CarRegister */
+
+.signRegist {
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.signRegist form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signRegist h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #9b59b6;
+  background-color: #fff;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: url('path/to/arrow-icon.png') no-repeat right center;
+}
+
+.signRegist button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 16px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.signRegist button:hover {
+  background-color: #0056b3;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .signRegist {
+    max-width: 100%;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .form-group select {
+    width: 100%;
+  }
+
+  .signRegist button {
+    width: 100%;
+  }
+}
+
+.inline-labels label {
+  display: flex;
+  align-items: center;
+}
+
+.inline-labels label::before {
+  content: "";
+  flex: 0 0 20px;
+  height: 2px;
+  background-color: #333;
+  margin-right: 8px;
+}
+
+.inline-labels label {
+  margin-right: 2;
+  margin-bottom: 53px;
+}
+
+@media (max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
+
+/* Animation Styles */
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+
+.inline-labels label {
+  margin-right: 2;
+  margin-bottom: 53px;
+}
+
+.reservation-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.reservation-form select,
+.reservation-form input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.reservation-form button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.reservation-form button:hover {
+  background-color: #27ae60;
+}
+
+/* Button styles */
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #27ae60;
+  /* Darker shade for hover effect */
+}
+
+
+.report {
+  max-width: 900px;
+  max-height: 900px;
+  /* Adjust maximum width of the registration form */
+  width: 100%;
+  /* Adjust width of the form container */
+  margin: 10 auto;
+  /* Center the form horizontally */
+  padding: 24px;
+  /* Add padding around the form */
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Background color for the form */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(183, 73, 73, 0.1);
+  color: #333;
+
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+
+form .gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .category {
+    width: 100%;
+  }
+
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
+
+.report form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report h1 {
+
+  margin-bottom: 40px;
+  font-size: 3em;
+}
+
+/* Other existing styles */
+
+.text-report {
+  display: flex;
+  flex-direction: column;
+  page-break-inside: avoid;
+  text-align: left;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.text-report:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.text-report h2 {
+  font-size: 1.5em;
+  margin: 5px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.text-report p {
+  font-size: 1.2em;
+  color: #555;
+  margin: 8px 0;
+}
+
+.registbtn {
+  background-color: #000276;
+  color: white;
+  padding: 12px 16px;
+  margin-top: 1px;
+  border: 30;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 3px;
+}
+
+.registbtn:hover {
+  opacity: 1;
+}
+
+.sign h1 {
+  margin-bottom: 20px;
+  font-size: 35px;
+  /* Adjust the font size as needed */
+}
+
+.sign label {
+  display: block;
+  margin-bottom: 2px;
+  color: #333;
+  /* Label text color */
+}
+
+.sign input[type="email"],
+.sign input[type="text"],
+.sign input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #f8f8f8;
+  /* Input background color */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  /* Add margin between form groups */
+
+}
+
+.form-group label {
+  width: 100px;
+  /* Adjust label width as needed */
+  margin-right: 8px;
+  /* Adjust margin for spacing between label and input */
+}
+
+
+
+.form-group input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  margin-bottom: 6px;
+  margin-right: 8px;
+  margin-left: 8px;
+
+  /* Adjust this value to move it left */
+  border: none;
+  background-color: #f8f8f8;
+  resize: vertical;
+  min-height: 8px;
+  max-width: 170px;
+}
+
+.form-group textarea {
+  flex: 1;
+  /* Take remaining space */
+  padding: 8px;
+  /* Adjust padding */
+  margin-bottom: 15px;
+  /* Add margin for spacing */
+  border: none;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  resize: vertical;
+  /* Allowing vertical resize */
+  min-height: 100px;
+  /* Set minimum height */
+}
+
+.form-group .cname {
+  width: 300px;
+  margin: 10px;
+}
+
+
+select {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #f8f8f8;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-selected {
+  background-color: #f8f8f8;
+}
+
+.sign button.Loginbtn {
+  background-color: #222222;
+  /* Button background color */
+  color: #f4f4f4;
+  padding: 12px 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 33px;
+
+
+}
+
+.sign button.registerbtn {
+  background-color: #007bff;
+  /* Button background color */
+  color: white;
+  padding: 12px 16px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+
+  border-radius: 3px;
+}
+
+.sign button.registerbtn:hover {
+  opacity: 1;
+}
+
+.container {
+  padding: 10px;
+  max-width: 400px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* Center text within the container */
+}
+
+.main {
+  width: 90%;
+  /*Takes 90% width from WebContainer*/
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: url(imgs/main.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px;
+  /* Adjust padding as needed */
+  box-sizing: border-box;
+  text-align: center;
+  /* Center-align text */
+  color: #fff;
+  /* Set text color */
+  position: relative;
+  /* Add relative positioning */
+
+}
+
+
+.main h1 {
+  position: absolute;
+  /* Set to absolute positioning */
+  top: 70px;
+  /* Adjust top position as needed */
+  left: 20px;
+  /* Adjust left position as needed */
+  color: #fff;
+  /* Set text color */
+  font-size: 3em;
+  /* Set font size */
+  font-weight: 700;
+  /* Set font weight */
+  margin: 0;
+  /* Remove default margin */
+  animation: zoomInOut 4s infinite alternate;
+  /* Adding animation */
+
+}
+
+.main h1 {
+  top: 70px;
+  left: 20px;
+}
+
+.admin div {
+  position: relative;
+}
+
+.main h2 {
+  color: rgb(241, 241, 241);
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.main h2 span {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgb(55, 0, 255);
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.main h3 {
+  color: #5005c9;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* Reset default margin and padding */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: var(--background-color);
+  color: #333;
+  /* Default text color */
+}
+
+/* Styles for h1 */
+.main h1 {
+  font-size: 2.5em;
+  /* Adjust font size */
+  margin-bottom: 20px;
+  /* Add spacing */
+}
+
+/* Styles for paragraphs */
+.main p {
+  font-size: 1.2em;
+  /* Adjust font size */
+  line-height: 1.6;
+  /* Set line height */
+  margin-bottom: 15px;
+  /* Add spacing */
+}
+
+
+
+
+
+/* Style for the header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for sections */
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+
+/* Style for the headings */
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Style for the paragraphs */
+p {
+  margin-bottom: 10px;
+}
+
+
+
+
+/* Styles for the buttons */
+nav ul button {
+  padding: 10px 15px;
+  /* Add padding to the buttons */
+  margin: 0 5px;
+  /* Add margin between buttons */
+  background-color: #6fadff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+nav ul button:hover {
+  background-color: #4f8eeb;
+}
+
+.alertmsg {
+  color: red;
+}
+
+.av {
+  color: rgb(40, 183, 40);
+}
+
+/* Your existing styles for the page */
+
+/* Style for the car table */
+.reservation-form {
+  margin: 20px;
+}
+
+#carTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#carTable th,
+#carTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+#carTable th {
+  background-color: #f2f2f2;
+}
+
+
+main {
+
+  max-width: 1500px;
+  width: 95%;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  align-items: stretch;
+
+}
+
+main .car {
+  max-width: 300px;
+  flex: 1 1 210px;
+  text-align: center;
+  height: 400px;
+  border: 1px solid lightgray;
+  margin: 20px;
+
+}
+
+
+main .car image {
+  height: 50%;
+  margin-bottom: 20px;
+
+}
+
+
+main .car .image {
+  height: 50%;
+  margin-bottom: 20px;
+}
+
+main .car .image img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+main .car .caption {
+  padding-left: 1em;
+  text-align: left;
+  line-height: 3em;
+  height: 25%;
+}
+
+main .car .caption p {
+  font-size: 1.5rem;
+}
+
+
+
+.car img {
+  width: 100%;
+  /* Make sure the image takes the full width of its container */
+  height: auto;
+  /* Maintain the aspect ratio */
+}
+
+.car button.add {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.car button.add:hover {
+  background-color: #45a049;
+}
+
+.car {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+}
+
+.product_caption {
+  width: 200px;
+  height: 100px;
+
+}
+
+html {
+  font-size: 80%;
+}
+
+.add {
+  margin-top: 30px;
+}

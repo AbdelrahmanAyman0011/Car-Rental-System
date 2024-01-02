@@ -42,6 +42,12 @@
 
         </div>
         <button type="submit" name="submit" id="submit">Return</button>
+        <?php
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "nullCar") {
+        echo '<p class="alertmsg">No Car selected</p>';
+    }
+  }?>
         </form>
     </div>
     

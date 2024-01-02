@@ -7,15 +7,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <a href="CustomerHome.html" class="logo">Customer Page</a>
+<header>
+    <a href="adminHome.html" class="logo">Admin</a>
     <nav class="navigation">
       <ul>
-        <li><a href="CustomerHome.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="index.html">Log OUT</a></li>
+        <li><a href="adminHome.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html">Log-OUT</a></li>
       </ul>
     </nav>
   </header>
+
   <section class="CustomerNav">
     <div class="Ab-cust">
       <div class="reservation-form">

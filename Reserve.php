@@ -4,12 +4,37 @@ if (isset($_POST["submit"])) {
     session_start();
     $customerId = $_SESSION["customerId"];
 
-    if (($carId = $_POST["carType"])==null){
-        header("location:ReserveCustomer.php");
+    if (($_POST["officeLoc"])==null){
+        header("location:ReserveCustomer.php?error=nullOffice");
+        exit();
     }
-    $cardNum = $_POST["cardNum"];
-    $sDate = $_POST["startDate"];
-    $eDate = $_POST["endDate"];
+
+
+    if (($carId = $_POST["carType"])==null){
+        header("location:ReserveCustomer.php?error=nullCar");
+        exit();
+    }
+
+    $cardNum = isset($_POST["cardNum"]) ? $_POST["cardNum"] : null;
+    if ($cardNum == null) {
+        header("location:ReserveCustomer.php?error=nullCard");
+        exit();
+    }
+
+    if (isset($_POST["startDate"]) && !empty($_POST["startDate"])) {
+        $sDate = $_POST["startDate"];   
+    }else{
+        header("location:ReserveCustomer.php?error=nullSDate");
+        exit();
+    }
+
+    if (isset($_POST["endDate"]) && !empty($_POST["endDate"])) {
+        $eDate = $_POST["endDate"];   
+    }else{
+        header("location:ReserveCustomer.php?error=nullEDate");
+        exit();
+    }
+        
     $price = $_POST["price"];
 
     $state = false;
