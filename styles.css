@@ -1186,3 +1186,25 @@ nav ul button:hover {
 .alertmsg {
   color: red;
 }
+/* Your existing styles for the page */
+
+/* Style for the car table */
+.reservation-form {
+  margin: 20px;
+}
+
+#carTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#carTable th,
+#carTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+#carTable th {
+  background-color: #f2f2f2;
+}
