@@ -4,7 +4,9 @@ if (isset($_POST["submit"])) {
     session_start();
     $customerId = $_SESSION["customerId"];
 
-    $carId = $_POST["carType"];
+    if (($carId = $_POST["carType"])==null){
+        header("location:ReserveCustomer.php");
+    }
     $cardNum = $_POST["cardNum"];
     $sDate = $_POST["startDate"];
     $eDate = $_POST["endDate"];
@@ -20,9 +22,10 @@ if (isset($_POST["submit"])) {
         reserve($con,$customerId,$carId,$sDate,$eDate);
         changeState($con,$carId,$state);
         paymentOperation($con,$sDate,$cardNum,$customerId,$price);
+        header("location:ReserveCustomer.php");
 
 
 
 }else{
-    header("location:carRegistration.html");
+    header("location:ReserveCustomer.php");
 }

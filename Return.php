@@ -11,7 +11,8 @@ if (isset($_POST["submit"])) {
 
         ReturnCar($con,$carId);
         changeState($con,$carId,true);
+        header("location:ReturnCustomer.php");
 
 }else{
-    header("location:carRegistration.html");
+    header("location:ReturnCustomer.php");
 }

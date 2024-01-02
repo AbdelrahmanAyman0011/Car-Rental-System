@@ -22,7 +22,7 @@
 
   <section class="adminNav">
     <div class="signRegist">
-      <form method="POST" action="RegistCar.php" onsubmit="return validateForm()">
+      <form method="POST" action="RegistCar.php" onsubmit="return validateForm()" enctype="multipart/form-data">
         <h1>Register a car</h1>
 
         <div class="form-group">
@@ -56,6 +56,8 @@
             <option value=0>Not Available</option>
           </select>
         </div>
+
+        <input type="file" name="photo" id="photo" accept="image/*">
 
         <div class="signRegist">
           <button type="submit" name="submit" class="registbtn">Register</button>
