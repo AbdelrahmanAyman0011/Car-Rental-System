@@ -127,7 +127,7 @@ if (isset($_GET["error"])) {
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
               },
-              body: 'carType=' + selectedCar, // Change to 'carType' as it matches the PHP code
+              body: 'carType=' + selectedCar + '&startDate=' + document.getElementById('startDate').value + '&endDate=' + document.getElementById('endDate').value,
             })
             .then(response => response.json()) // Expecting JSON response
         .then(data => {
@@ -154,7 +154,7 @@ function fetchPrice(selectedCar){
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
               },
-              body: 'carType=' + selectedCar, // Change to 'carType' as it matches the PHP code
+              body: 'carType=' + selectedCar + '&startDate=' + document.getElementById('startDate').value + '&endDate=' + document.getElementById('endDate').value,
             })
             .then(response => response.json()) // Expecting JSON response
         .then(data => {
@@ -176,6 +176,16 @@ function fetchPrice(selectedCar){
 
       document.getElementById('carType').addEventListener('change', function(){
         var selectedCar = this.value;
+        fetchPrice(selectedCar);
+      });
+
+      document.getElementById('startDate').addEventListener('change', function(){
+        var selectedCar = document.getElementById('carType').value;
+        fetchPrice(selectedCar);
+      });
+
+      document.getElementById('endDate').addEventListener('change', function(){
+        var selectedCar = document.getElementById('carType').value;
         fetchPrice(selectedCar);
       });
 
@@ -205,7 +215,7 @@ function fetchCars(selectedValue){
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
               },
-              body: 'carType=' + selectedCar, // Change to 'carType' as it matches the PHP code
+              body: 'carType=' + selectedCar + '&startDate=' + document.getElementById('startDate').value + '&endDate=' + document.getElementById('endDate').value,
             })
             .then(response => response.json()) // Expecting JSON response
         .then(data => {

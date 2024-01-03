@@ -21,9 +21,9 @@ if($type=="Car_Name"){
 
 }elseif($type=="State"){
     $sState = $_GET["value"];
-    if($sState=="available"){
+    if($sState=="Available"){
     $result = searchCarsState($con,true);
-}else if($sState=="unavailable" ){
+}else if($sState=="Unavailable" ){
     $result = searchCarsState($con,false);
 }
 }
