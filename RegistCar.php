@@ -18,10 +18,12 @@ if (isset($_POST["submit"])) {
         require_once 'phpFunctions.php';
         
 
-        registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state,$targetFile);
-
+if(registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state,$targetFile)==false){
+    header("location:carRegistration.php?error=invalidOffice");
+    exit();
+}
 
 
 }else{
-    header("location:carRegistration.html");
+    header("location:carRegistration.php");
 }

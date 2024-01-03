@@ -62,6 +62,10 @@
         <div class="signRegist">
           <button type="submit" name="submit" class="registbtn">Register</button>
         </div>
+
+
+
+        
       </form>
     </div>
   </section>

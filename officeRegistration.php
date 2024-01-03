@@ -37,6 +37,14 @@
         <div class="signRegist">
           <button type="submit" name="submit" class="registbtn">Register</button>
         </div>
+
+        <?php
+        if (isset($_GET["error"])) {
+    if ($_GET["error"] == "invalidOffice") {
+        echo '<p class="alertmsg">Office does not exist.</p>';
+    } 
+    
+}?>
       </form>
     </div>
   </section>

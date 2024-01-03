@@ -138,14 +138,19 @@ function registerCar($con,$name,$price,$model,$color,$plateID,$officeID,$state,$
     VALUES (?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
-        header("location:carRegistration.html?error=somethingWrong"); // if sql statement has any errors
+        header("location:carRegistration.php?error=somethingWrong"); // if sql statement has any errors
         exit();
     }
 
     mysqli_stmt_bind_param($stmt, "ssssssss",$plateID,$name,$model,$color,$price,$officeID,$state,$targetFile);
     mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    if($resultData){
+        $result = false;
+        return $result;
+    }
     mysqli_stmt_close($stmt);
-    header("location:carRegistration.html");
+    header("location:carRegistration.php");
     $result = true;
     return $result;
 }
