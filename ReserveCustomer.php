@@ -15,7 +15,7 @@
     <nav class="navigation">
       <ul>
         <li><a href="CustomerHome.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="AvailableCarsCust.html"><i class="fas fa-car"></i> Available Cars</a></li>
+        <li><a href="AvailableCars.php"><i class="fas fa-car"></i> Available Cars</a></li>
         <li><a href="index.html">Log OUT</a></li>
       </ul>
     </nav>
