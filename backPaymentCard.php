@@ -26,6 +26,7 @@ if (isset($_POST["submit"])) {
     $expirationDate = "20{$expirationYear}-{$expirationMonth}-01";
 
     paymentCard($con, $cardNumber, $expirationMonth, $expirationYear, $cvv, $customer_ID);
+    header("location:PaymentCard.php");
 } else {
     header("location:PaymentCard.php");}
 ?>
