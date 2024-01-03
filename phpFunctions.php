@@ -26,6 +26,33 @@ function emailUsed($con,$mail){
     mysqli_stmt_close($stmt);
 }
 
+
+function cardCusUsed($con, $cardNumber,$cvv,$customer_ID){
+    $sql = "SELECT * FROM payment_card WHERE Card_ID = ? AND CVV = ? AND Customer_ID = ?;";
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt,$sql)){ // -- > run this sql e
+        header("location:Signup.html"); // if sql statement has any errors
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "sss", $cardNumber,$cvv,$customer_ID);
+    mysqli_stmt_execute($stmt);
+
+
+    $resultData = mysqli_stmt_get_result($stmt);
+    if($row = mysqli_fetch_assoc($resultData)){
+        return $row; // what we want to login (the data)
+    }
+    else{ // what we want to register (not finding a used email)
+        $result = false;
+        return $result;
+    }
+
+
+    mysqli_stmt_close($stmt);
+}
+
+
 function get_cars($con, $customer_ID) {
     $sql = "SELECT R.car_ID, car.Car_Name FROM Reserve R
             JOIN car ON R.car_ID = car.car_ID

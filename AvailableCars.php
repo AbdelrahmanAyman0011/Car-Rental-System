@@ -78,7 +78,7 @@ foreach ($search_results as $row) {
 
       
 <p class="product_name"><?php echo $row["Car_Name"];?></p>
-<p class="product_name"><?php $state = $row["State"]; if($state==1){echo '<p class ="av">Available</p>';}else{echo '<p class = "alertmsg">Unvailable</p>';};?></p>
+<p class="product_name"><?php $state = $row["State"]; if($state==1){echo '<p class ="av">Available</p>';}else{echo '<p class = "alertmsg">Unavailable</p>';};?></p>
 
 <p class="price"> <b>$<?php echo $row["Price"];?></b></p>
     </div>

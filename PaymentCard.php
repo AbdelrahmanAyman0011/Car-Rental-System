@@ -42,6 +42,14 @@
 
                         <label for="cvv">CVV:</label>
                         <input type="text" name="cvv" id="cvv" placeholder="123" maxlength="3" required>
+                        <?php
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "redundantCard") {
+        echo '<p class="alertmsg">You have entered this card already!</p>';
+    }
+}
+
+?>
                     </form>
                     <div> <!-- Added missing div tag -->
                         <button type="submit" name="submit" id="submit">Add</button>
