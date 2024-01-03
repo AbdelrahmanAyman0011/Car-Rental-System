@@ -189,6 +189,105 @@ $carNames = [];
     return $carNames;
 }
 
+function searchCarsName($con,$name){
+$sql = "SELECT * FROM car WHERE Car_Name LIKE ?;";
+
+$stmt = mysqli_stmt_init($con);
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    exit();
+}
+
+$searchTerm ='%' . $name . '%';
+
+mysqli_stmt_bind_param($stmt, "s", $searchTerm);
+mysqli_stmt_execute($stmt);
+
+$resultData = mysqli_stmt_get_result($stmt);
+    $values = [];
+
+    while ($row = mysqli_fetch_assoc($resultData)) {
+        $values[] = $row;
+    }
+
+    mysqli_stmt_close($stmt);
+
+    return $values;
+}
+
+
+function searchCarsModel($con,$model){
+    $sql = "SELECT * FROM car WHERE Model LIKE ?;";
+    
+    $stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        exit();
+    }
+    
+    $searchTerm ='%' . $model . '%';
+    
+    mysqli_stmt_bind_param($stmt, "s", $searchTerm);
+    mysqli_stmt_execute($stmt);
+    
+    $resultData = mysqli_stmt_get_result($stmt);
+        $values = [];
+    
+        while ($row = mysqli_fetch_assoc($resultData)) {
+            $values[] = $row;
+        }
+    
+        mysqli_stmt_close($stmt);
+    
+        return $values;
+    }
+
+
+    function searchCarsColor($con,$color){
+        $sql = "SELECT * FROM car WHERE Color LIKE ?;";
+        
+        $stmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            exit();
+        }
+        
+        $searchTerm ='%' . $color . '%';
+        
+        mysqli_stmt_bind_param($stmt, "s", $searchTerm);
+        mysqli_stmt_execute($stmt);
+        
+        $resultData = mysqli_stmt_get_result($stmt);
+            $values = [];
+        
+            while ($row = mysqli_fetch_assoc($resultData)) {
+                $values[] = $row;
+            }
+        
+            mysqli_stmt_close($stmt);
+        
+            return $values;
+        }
+
+        function searchCarsState($con,$state){
+            $sql = "SELECT * FROM car WHERE `State` = ?;";
+            
+            $stmt = mysqli_stmt_init($con);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                exit();
+            }
+                        
+            mysqli_stmt_bind_param($stmt, "s", $state);
+            mysqli_stmt_execute($stmt);
+            
+            $resultData = mysqli_stmt_get_result($stmt);
+                $values = [];
+            
+                while ($row = mysqli_fetch_assoc($resultData)) {
+                    $values[] = $row;
+                }
+            
+                mysqli_stmt_close($stmt);
+            
+                return $values;
+            }
 
 
 
