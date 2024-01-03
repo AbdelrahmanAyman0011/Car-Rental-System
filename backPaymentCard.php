@@ -27,6 +27,5 @@ if (isset($_POST["submit"])) {
 
     paymentCard($con, $cardNumber, $expirationMonth, $expirationYear, $cvv, $customer_ID);
 } else {
-    header("location:carRegistration.php");
-}
+    header("location:PaymentCard.php");}
 ?>

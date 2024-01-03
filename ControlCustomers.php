@@ -20,7 +20,7 @@
   <section class="CustomerNav">
     <div class="Ab-cust">
       <div class="reservation-form">
-        <table id="customerTable">
+        <table id="carTable">
           <thead>
             <tr>
               <th>Customer ID</th>
@@ -40,18 +40,23 @@
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['customer_id'])) {
                 $customerID = $_POST['customer_id'];
-
+                try {
                 // Delete customer query
                 $deleteQuery = "DELETE FROM Customer WHERE Customer_ID = $customerID";
                 $result = mysqli_query($con, $deleteQuery);
-
                 if ($result) {
-                    header("Location:ControlCustomers.php");
-                    exit;
-                } else {
-                    echo "Error deleting customer.";
-                }
-            }
+                  header("Location: ControlCustomers.php");
+                  exit;
+              } else {
+                  $error = "Error deleting customer.";
+                  echo "<script>alert('$error');</script>";
+              }
+          } catch (mysqli_sql_exception $e) {
+              $error = "Errore: Impossibile.";
+              echo "<script>alert('$error');</script>";
+          }
+      }
+      
 
             $sql = "SELECT Customer_ID, Fname, Lname, Gender, Country, City, Street, PhoneNum FROM Customer";
             $result = mysqli_query($con, $sql);

@@ -38,7 +38,7 @@ unset($_SESSION['search_results']);
       <ul>
         <li><a href="ReserveCustomer.php"><i class="far fa-calendar-alt"></i> Reserve Car</a></li>
         <li><a href="ReturnCustomer.php"><i class="far fa-calendar-alt"></i> Return Car</a></li>
-        <li><a href="PaymentCard.html">Payment-Card</a></li>
+        <li><a href="PaymentCard.php">Payment-Card</a></li>
         <li><a href="customerProfile.php">My profile</a></li>
         <li><a href="index.html">Log OUT</a></li>
 
