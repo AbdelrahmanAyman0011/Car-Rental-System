@@ -1,8 +1,18 @@
 <?php
 require_once 'connection.php';
-$sql = "SELECT * FROM car";
-$all_product = $con->query($sql);
- 
+session_start();
+if (isset($_SESSION['search_results'])) {
+  $search_results  = $_SESSION['search_results'];
+} else {
+
+  $sql = "SELECT * FROM car";
+  $all_product = $con->query($sql);
+
+  // Fetch all rows into an array for later use
+  $search_results = mysqli_fetch_all($all_product, MYSQLI_ASSOC);;
+}
+
+unset($_SESSION['search_results']);
 
 ?>
 
@@ -36,11 +46,29 @@ $all_product = $con->query($sql);
     </nav>
   </header>
 <section class="Customer">
+<form action="searchCar.php">
+  <div class="search">
+  <label for="type">Filter by:</label>
+  <select name="type" id="type">
+<option value="Car_Name">Name</option>
+<option value="Model">Model</option>
+<option value="Color">Color</option>
+<option value="State">State</option>
+  </select>
+  <label for="value">Value:</label>
+  <input type="text" name="value" id="value" placeholder="What are you looking for?" required>
+<button type="submit" name="submit" id="submit">Search</button>
+  </div>
+   
+
+</form>
+  
 <main>
 
 <?php
-while($row=mysqli_fetch_assoc($all_product)){
-?>
+
+foreach ($search_results as $row) {
+  ?>
   <div class="car">
 <div class ="image">
   <img src ="<?php echo $row["Img_Path"];?>" alt="">
@@ -71,6 +99,11 @@ while($row=mysqli_fetch_assoc($all_product)){
   function reservePage(){
     window.location.href = "ReserveCustomer.php";
   }
+
+
+
+
+
   </script>
 
 </body>
