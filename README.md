@@ -1,3 +1,7 @@
+# Welcome
+
+![Car Rental System Welcome](imgs/Welcome.png)
+
 # Car Rental System
 
 ## Table of Contents
