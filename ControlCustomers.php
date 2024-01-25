@@ -26,7 +26,6 @@
               <th>Customer ID</th>
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Gender</th>
               <th>Country</th>
               <th>City</th>
               <th>Street</th>
@@ -69,7 +68,6 @@
                   <td><?php echo $row['Customer_ID']; ?></td>
                   <td><?php echo $row['Fname']; ?></td>
                   <td><?php echo $row['Lname']; ?></td>
-                  <td><?php echo $row['Gender']; ?></td>
                   <td><?php echo $row['Country']; ?></td>
                   <td><?php echo $row['City']; ?></td>
                   <td><?php echo $row['Street']; ?></td>
